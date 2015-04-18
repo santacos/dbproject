@@ -14,7 +14,33 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('AffiliationTableSeeder');
 	}
+
+}
+
+
+class AffiliationTableSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('affiliations')->delete();
+
+        
+        $pages = array(
+            array(
+                'faculty_flag' => true,
+                'name'=>'วิศวกรรมศาสตร์',
+            ),
+
+            array(
+                'faculty_flag' => true,
+                'name'=>'แพทยศาสตร์',
+            )
+        );
+
+        
+        DB::table('affiliations')->insert($pages);
+    }
 
 }

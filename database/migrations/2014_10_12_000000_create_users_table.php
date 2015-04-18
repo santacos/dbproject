@@ -22,11 +22,30 @@ class CreateUsersTable extends Migration {
 			$table->string('lastname',30);
 			$table->string('nickname',20);
 			$table->string('sex',1);
-			$table->dateTime('birthdate');
+			$table->date('birthdate');
 			$table->string('tel',10);
 			$table->rememberToken();
 			$table->timestamps();
 		});
+
+		Schema::create('teachers', function(Blueprint $table)
+		{
+			$table->integer('user_id')->unsigned()->primary('user_id');
+			$table->foreign('user_id')->references('id')->on('users');
+		});
+
+		Schema::create('students',function(Blueprint $table)
+		{
+			$table->integer('user_id')->unsigned()->primary('user_id');
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->string('description',200);
+			$table->integer('year')->unsigned();
+		});
+
+		
+		
+
+
 	}
 
 	/**
@@ -37,6 +56,10 @@ class CreateUsersTable extends Migration {
 	public function down()
 	{
 		Schema::drop('users');
+		Schema::drop('teachers');
+		Schema::drop('students');
+
+				
 	}
 
 }
