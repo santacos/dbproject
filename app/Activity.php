@@ -18,5 +18,10 @@ class Activity extends Model {
         return $this->belongsTo('App\Affiliation','aff_id');
     }
 
+    public function user() {
+        return $this->belongsToMany('App\User','manage_activity','act_id', 'user_id');
+    }
+
+ 
 
 }

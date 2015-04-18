@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['username', 'email', 'password','firstname'];
+	protected $fillable = ['username', 'email', 'password','firstname','lastname','nickname','tel','sex','birthdate'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -30,5 +30,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+	public function redirectToProvider()
+	{
+	    return Socialize::with('facebook')->redirect();
+	}
+
+	public function handleProviderCallback()
+	{
+	    $user = Socialize::with('facebook')->user();
+
+	    // $user->token;
+	}
+
+	public function activity()
+    {
+        return $this->belongsToMany('App\Activity','manage_activity','user_id','act_id');
+    }
+
+   
 
 }

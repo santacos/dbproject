@@ -1,7 +1,11 @@
 <?php namespace App\Http\Controllers;
 use Auth;
+use DB;
+use Illuminate\Contracts\Auth\Authenticatable;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 
 use Illuminate\Http\Request;
 
@@ -14,13 +18,11 @@ class ActivityController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		
 		$activities = \App\Activity::has('affiliation')->get();
-		foreach ($activities as $act) {
-			$act->aff_name = \App\Affiliation::find($act->aff_id)->name;
-		}
+		$message ='';
 
-		return view('activity.index',compact('activities'));
+		return view('activity.index',compact('activities','message'));
 	}
 
 	/**
@@ -46,9 +48,9 @@ class ActivityController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(Request $request,Authenticatable $user)
 	{
-		//
+		
 		$this->validate($request, [
         'name' => 'required|max:100',
         'detail' => 'required|max:1000',
@@ -68,10 +70,11 @@ class ActivityController extends Controller {
 		$aff = \App\Affiliation::find($request->aff_id);
 
 		$activity->affiliation()->associate($aff);
-
-		$activity->save();
 		
-		//return view('activity.index');
+		$activity->save();
+
+		$user->activity()->attach($activity->act_id);
+		return redirect('activity')->with('message', 'create successfully');
 	}
 
 	/**
@@ -83,6 +86,9 @@ class ActivityController extends Controller {
 	public function show($id)
 	{
 		//
+		$activity = \App\Activity::has('affiliation')->where('act_id','=',$id)->first();
+
+		return view('activity.show',compact('activity'));
 	}
 
 	/**

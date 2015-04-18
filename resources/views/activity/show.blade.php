@@ -8,15 +8,9 @@
 				<div class="panel-heading">Home</div>
 
 				<div class="panel-body">
-					@if($message!='')
-					<div class="alert alert-success" role="alert">{{$message}}</div>
-					@endif
-					
-					<a href="{{url('/activity/create')}}" class="btn btn-info" style="margin-bottom:1em;">Create new activity</a>
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
-					          <th>#</th>
 					          <th>Name</th>
 					          <th>Detail</th>
 					          <th>Start Date</th>
@@ -27,9 +21,7 @@
 					    </thead>
 					    <?php $i=0 ?>
 					    <tbody>
-					    	@foreach($activities as $activity)
 					        <tr>
-					          	<th scope="row">{{++$i}}</th>
 					          	<td>{{$activity->name}}</td>
 					         	<td>{{$activity->detail}}</td>
 					          	<td>{{$activity->start_date}}</td>
@@ -41,7 +33,6 @@
 					          		@endforeach
 					      		</td>
 					        </tr>
-					        @endforeach
 					    </tbody>
 				    </table>
 					
