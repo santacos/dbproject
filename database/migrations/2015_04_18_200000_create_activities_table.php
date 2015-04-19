@@ -49,7 +49,9 @@ class CreateActivitiesTable extends Migration {
 			$table->primary(['user_id','act_id']);
 		});
 
-		Schema::create('activity_department',function(Blueprint $table)
+
+
+		Schema::create('departments',function(Blueprint $table)
 		{
 			$table->increments('dep_id');
 			$table->string('name',40);
@@ -63,7 +65,7 @@ class CreateActivitiesTable extends Migration {
 			$table->foreign('user_id')->references('id')->on('users');
 
 			$table->integer('dep_id')->unsigned();
-			$table->foreign('dep_id')->references('dep_id')->on('activity_department');
+			$table->foreign('dep_id')->references('dep_id')->on('departments');
 
 			$table->primary(['user_id','dep_id']);
 		});
@@ -76,7 +78,7 @@ class CreateActivitiesTable extends Migration {
 			$table->foreign('act_id')->references('act_id')->on('activities');
 
 			$table->integer('dep_id')->unsigned();
-			$table->foreign('dep_id')->references('dep_id')->on('activity_department');
+			$table->foreign('dep_id')->references('dep_id')->on('departments');
 
 			$table->string('edited_dep_detail',400);
 			$table->integer('min_num')->unsigned();
@@ -124,7 +126,7 @@ class CreateActivitiesTable extends Migration {
 
 		Schema::drop('advise_activity');
 		Schema::drop('manage_activity');
-		Schema::drop('activity_department');
+		Schema::drop('departments');
 		Schema::drop('interest_department');
 		Schema::drop('recruitment');
 		Schema::drop('application');
