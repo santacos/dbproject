@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 use Auth;
 use DB;
+use Session;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 use App\Http\Requests;
@@ -11,6 +12,8 @@ use Illuminate\Http\Request;
 
 class ActivityController extends Controller {
 
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -20,7 +23,7 @@ class ActivityController extends Controller {
 	{
 		
 		$activities = \App\Activity::has('affiliation')->get();
-		$message ='';
+		$message = Session::get('message');
 
 		return view('activity.index',compact('activities','message'));
 	}
@@ -74,7 +77,8 @@ class ActivityController extends Controller {
 		$activity->save();
 
 		$user->activity()->attach($activity->act_id);
-		return redirect('activity')->with('message', 'create successfully');
+		Session::flash('message', 'Successfully updated!');
+		return redirect('activity');
 	}
 
 	/**
@@ -124,4 +128,12 @@ class ActivityController extends Controller {
 		//
 	}
 
+
+	public function yourActivity(){
+		
+		$user = Auth::user();
+		$activities = \App\User::find($user->id)->activity;
+		return view('activity.youractivity',compact('activities','user'));
+		
+	}
 }

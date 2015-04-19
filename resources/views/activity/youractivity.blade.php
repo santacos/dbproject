@@ -5,16 +5,15 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-success">
-				<div class="panel-heading">All activity</div>
+				<div class="panel-heading">Your activities</div>
 
 				<div class="panel-body">
-					@if(count($message) > 0)
-					<div class="alert alert-success" role="alert">{{$message}}</div>
-					@endif
+				
 					
 					<a href="{{url('/activity/create')}}" class="btn btn-info" style="margin-bottom:1em;">Create new activity</a>
-					<a href="{{url('/youractivity')}}" class="btn btn-warning" style="margin-bottom:1em;">your activity</a>
+					<a href="{{url('/activity')}}" class="btn btn-success" style="margin-bottom:1em;">All activity</a>
 					
+					{{$user}}
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
@@ -40,7 +39,7 @@
 					          	<td>{{$activity->affiliation->name}}</td>
 					          	<td>
 					          		@foreach($activity->user as $man)
-					          		{{$man->username}} <br>
+					          		{{$man->username}} <br>{{$man->email}}
 					          		@endforeach
 					      		</td>
 					      		<td>

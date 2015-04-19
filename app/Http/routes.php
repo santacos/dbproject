@@ -20,4 +20,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('activity','ActivityController');
+Route::get('youractivity', 'ActivityController@yourActivity');
+//Route::get('youractivity', ['middleware' => 'auth', 'ActivityController@yourActivity']);
+Route::resource('activity','ActivityController', ['only'=> ['index','create','store','show']]);
+
