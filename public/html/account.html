@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivityDB</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/foundation-datepicker/stylesheets/foundation-datepicker.css">
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/modernizr.js"></script>
+    <style type="text/css">
+      html,body {
+      	margin: 0;
+      	background-image: url('img/bg-blur.png');
+      	background-size: cover;
+      	overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head-bg"></div>
+    <div style="padding-top: 70px" class="row">
+      <div style="position: relative;" class="small-3 columns">
+        <div class="navigator">
+          <ul data-tab="" style="width: 228px; max-width:228px;" class="tabs vertical">
+            <li class="app-name">
+              <p>ActivityDB</p>
+            </li>
+            <li onclick="location.href = 'index.html';" class="tab-title"><a href="index.html">กิจกรรมทั้งหมด<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'search.html';" class="tab-title"><a href="#panel21">ค้นหาผู้ร่วมกิจกรรม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-own.html';" class="tab-title"><a href="#panel31">กิจรรมของคุณ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-join.html';" class="tab-title"><a href="#panel41">กิจกรรมที่คุณเข้าร่วม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'request.html';" class="tab-title"><a href="#panel51">คำร้องขอ/คำเชิญ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'account.html';" class="tab-title active"><a href="#panel61">แก้ไขข้อมูลส่วนตัว<i class="fa fa-caret-right"></i></a></li>
+            <li class="tab-title"><a data-reveal-id="logout">ออกจากระบบ</a>
+              <div id="logout" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                <h4 id="modalTitle">ยืนยันการออกจากระบบ</h4><a href="login.html" class="small alert button">ตกลง</a><a aria-label="Close" class="close-reveal-modal">×</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-9 columns">
+        <div class="user-head"><img src="https://img-i.zeebox.com/images/profile/generic/Empty_Profile_07.png">
+          <p>สวัสดี จิรัฐ อ้นอารี !</p>
+        </div>
+        <div class="tabs-content">
+          <div id="panel61" class="content active">
+            <div style="padding-left: 60px" class="main-box">
+              <form id="" method="" action="">
+                <div class="row">
+                  <div class="small-1 columns"></div>
+                  <div style="padding-left: 5px;" class="small-11 columns">
+                    <div class="row">
+                      <div class="small-5 columns">
+                        <div class="row">
+                          <div class="small-3 columns">
+                            <label class="right inline">ชื่อ : </label>
+                          </div>
+                          <div class="small-9 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                      <div style="margin-left: -20px" class="small-6 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">นามสกุล : </label>
+                          </div>
+                          <div class="small-8 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-5 columns">
+                        <div class="row">
+                          <div class="small-3 columns">
+                            <label class="right inline">ชื่อเล่น : </label>
+                          </div>
+                          <div class="small-9 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -55px" class="small-7 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">เบอร์โทรศัพท์ : </label>
+                          </div>
+                          <div class="small-8 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -13px" class="small-6 columns end">
+                        <div class="row">
+                          <div class="small-3 columns">
+                            <label class="right inline">อีเมล : </label>
+                          </div>
+                          <div class="small-9 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -70px" class="small-8 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">รายละเอียดของตน : </label>
+                          </div>
+                          <div class="small-8 columns end">
+                            <textarea placeholder="555" style="border-radius: 5px;"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -55px" class="small-7 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">รหัสผ่านเก่า : </label>
+                          </div>
+                          <div class="small-8 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -55px" class="small-7 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">รหัสผ่านใหม่ : </label>
+                          </div>
+                          <div class="small-8 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div style="margin-left: -55px" class="small-7 columns end">
+                        <div class="row">
+                          <div class="small-4 columns">
+                            <label class="right inline">รหัสผ่านใหม่อีกครั้ง : </label>
+                          </div>
+                          <div class="small-8 columns">
+                            <input type="text" placeholder="name" class="input-radius">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="small-7 columns">
+                        <input type="submit" value="Let's go !" id="submit-info">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/jquery.js"></script>
+    <script type="application/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation-datepicker/js/foundation-datepicker.js"></script>
+    <script type="application/javascript">
+      $(document).foundation();
+      $(document).ready( function() {
+      	$('.change-date').fdatepicker({
+      		format: 'dd/mm/yyyy'
+      	});
+      });
+    </script>
+  </body>
+</html>

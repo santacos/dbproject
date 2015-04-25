@@ -1,0 +1,147 @@
+doctype html
+html.no-js(lang='th')
+	head
+		meta(charset="utf-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title ActivityDB
+		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Lato:300,400,700")
+		link(rel='stylesheet', href='bower_components/foundation/css/normalize.css')
+		link(rel='stylesheet', href='bower_components/foundation/css/foundation.css')
+		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.css')
+		link(rel="stylesheet", type="text/css", href="css/app.css")
+		link(rel="stylesheet", type="text/css", href="bower_components/foundation-datepicker/stylesheets/foundation-datepicker.css")
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/modernizr.js")
+		style(type="text/css").
+			html,body {
+				margin: 0;
+				background-image: url('img/bg-blur.png');
+				background-size: cover;
+				overflow: hidden;
+			}
+	body
+		.head-bg
+		.row(style="padding-top: 70px")
+			.small-3.columns(style="position: relative;")
+				.navigator
+					ul.tabs.vertical(data-tab='',style="width: 228px; max-width:228px;")
+						li.app-name
+							p ActivityDB
+						li.tab-title(onclick="location.href = 'index.html';")
+							a(href='index.html') กิจกรรมทั้งหมด
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'search.html';")
+							a(href='#panel21') ค้นหาผู้ร่วมกิจกรรม
+								i.fa.fa-caret-right
+						li.tab-title.active(onclick="location.href = 'activity-own.html';")
+							a(href='#panel31') กิจรรมของคุณ
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'activity-join.html';")
+							a(href='#panel41') กิจกรรมที่คุณเข้าร่วม
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'request.html';")
+							a(href='#panel51') คำร้องขอ/คำเชิญ
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'account.html';")
+							a(href='#panel61') แก้ไขข้อมูลส่วนตัว
+								i.fa.fa-caret-right
+						li.tab-title
+							a(data-reveal-id="logout") ออกจากระบบ
+							#logout.reveal-modal.join(data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog")
+								h4#modalTitle ยืนยันการออกจากระบบ
+								a.small.alert.button(href='login.html') ตกลง
+								a.close-reveal-modal(aria-label="Close") ×
+			.small-9.columns
+				.user-head
+					img(src="https://img-i.zeebox.com/images/profile/generic/Empty_Profile_07.png")
+					p สวัสดี จิรัฐ อ้นอารี !
+
+				.tabs-content
+					#panel31.content.active
+						.main-box
+							.row
+								.small-12.columns
+									.row
+												.small-6.columns
+													p(style="padding: 15px 0 0") สร้างฝ่ายในกิจกรรม
+												.small-3.columns
+													button(data-reveal-id="create-fai") เพิ่มฝ่าย
+													#create-fai.reveal-modal(data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog")
+														h4#modalTitle เพิ่มฝ่ายในกิจกรรม : abc
+														.row
+															.small-7.columns.small-centered
+																.row
+																	.small-5.columns
+																		select(style="display: inline-block")
+																			option(value='' disabled selected) ชื่อฝ่าย..
+																			option(value='saab') Lamborghinimborghinimborghini
+																			option(value='mercedes') Mercedes
+																			option(value='audi') Audi
+																	.small-2.columns
+																		p.inline หรือ
+																	.small-5.columns
+																		input(type="text", placeholder="ชื่อฝ่าย").inline
+																.row
+																	.small-3.columns
+																		label.right.inline คำอธิบายฝ่าย : 
+																	.small-9.columns
+																		textarea 444
+																.row
+																	.small-6.columns
+																		.row
+																			.small-8.columns
+																				label.right.inline จำนวนคนขั้นต่ำ : 
+																			.small-4.columns
+																				input(type="text", placeholder="0").inline
+																	.small-6.columns
+																		.row
+																			.small-8.columns
+																				label.right.inline จำนวนคนที่รับได้ : 
+																			.small-4.columns
+																				input(type="text", placeholder="0").inline
+																.row
+																	.small-7.columns
+																		input(type="submit", value="ยืนยัน")#submit-info
+											.row
+												.small-12.columns
+													table
+														thead
+															th(width="200") ชื่อฝ่าย
+															th(width="200") รายละเอียดฝ่าย
+															th จำนวนคนขึ้นต่ำ
+															th จำนวนคนปัจจุบัน
+															th จำนวนคนสูงสุด
+															th แก้ไขสมาชิค
+															th ลบ
+														tbody
+															tr
+																td dfkgdfgkdg
+																td adsdfsdf
+																td dfkgdfgkdg
+																td adsdfsdf
+																td dfkgdfgkdg
+																td 
+																	a(href="edit-fai-user.html") Edit
+																td
+																	a(data-reveal-id="delete-1") Delete
+																	#delete-1.reveal-modal.invite(data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog")
+																		h4#modalTitle ยืนยันการลบ
+																		ul.secondary.button-group.round
+																			li
+																				a.small.alert.button(href='#') ยกเลิก
+																			li
+																				a.small.success.button(href='#') ตกลง
+																		a.close-reveal-modal(aria-label="Close") ×
+												.row
+													.small-7.columns
+														input(type="submit", value="เสร็จสิ้น")#submit-info
+													a(href="activity-own.html") next
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/jquery.js")
+		script(type="application/javascript", src="bower_components/foundation/js/foundation.min.js")
+		script(src="bower_components/foundation-datepicker/js/foundation-datepicker.js")
+		script(type="application/javascript").
+			$(document).foundation();
+			$(document).ready( function() {
+				$('.change-date').fdatepicker({
+					format: 'dd/mm/yyyy'
+				});
+			});

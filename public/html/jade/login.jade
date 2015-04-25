@@ -1,0 +1,51 @@
+doctype html
+html.no-js(lang='th')
+	head
+		meta(charset="utf-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title ActivityDB
+		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Lato:300,400,700")
+		link(rel='stylesheet', href='bower_components/foundation/css/normalize.css')
+		link(rel='stylesheet', href='bower_components/foundation/css/foundation.css')
+		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.css')
+		link(rel="stylesheet", type="text/css", href="css/app.css")
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/modernizr.js")
+		style(type="text/css").
+			html,body {
+				margin: 0;
+				font-family: 'Lato', 'helvetica neue';
+				overflow: hidden;
+			}
+	body
+		.head-bg.log-page
+		.row
+			.small-12.columns
+				h1.big-head ActivityDB
+		.row
+			.small-12.columns
+				p.small-head ชีวิตมหาลัย (ที่แท้จริง) เริ่มต้น ที่นี่!
+		.row
+			.small-12.columns
+				.main-box.login
+					form.login-form
+						.row
+							.small-10.columns.small-centered
+								.row.login-row
+									.small-12.columns
+										input.login(type='text', placeholder='Username')
+								.row.login-row
+									.small-12.columns
+										input.login(type='password', placeholder='Password')
+						.row(style="padding-top: 10px")
+							.small-12.columns
+								input(type="submit", value="Let's go !")#login-button
+		.row
+			.small-12.columns.small-centered
+				p.text-center
+					a.reg-button ลืมรหัสผ่าน&nbsp;&#183;
+					a.reg-button &nbsp;สมัครสมาชิค
+		
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/jquery.js")
+		script(type="application/javascript", src="bower_components/foundation/js/foundation.min.js")
+		script(type="application/javascript").
+			$(document).foundation();

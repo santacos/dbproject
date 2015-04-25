@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivityDB</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/foundation-datepicker/stylesheets/foundation-datepicker.css">
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/modernizr.js"></script>
+    <style type="text/css">
+      html,body {
+      	margin: 0;
+      	background-image: url('img/bg-blur.png');
+      	background-size: cover;
+      	overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head-bg"></div>
+    <div style="padding-top: 70px" class="row">
+      <div style="position: relative;" class="small-3 columns">
+        <div class="navigator">
+          <ul data-tab="" style="width: 228px; max-width:228px;" class="tabs vertical">
+            <li class="app-name">
+              <p>ActivityDB</p>
+            </li>
+            <li onclick="location.href = 'index.html';" class="tab-title"><a href="index.html">กิจกรรมทั้งหมด<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'search.html';" class="tab-title"><a href="#panel21">ค้นหาผู้ร่วมกิจกรรม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-own.html';" class="tab-title active"><a href="#panel31">กิจรรมของคุณ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-join.html';" class="tab-title"><a href="#panel41">กิจกรรมที่คุณเข้าร่วม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'request.html';" class="tab-title"><a href="#panel51">คำร้องขอ/คำเชิญ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'account.html';" class="tab-title"><a href="#panel61">แก้ไขข้อมูลส่วนตัว<i class="fa fa-caret-right"></i></a></li>
+            <li class="tab-title"><a data-reveal-id="logout">ออกจากระบบ</a>
+              <div id="logout" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                <h4 id="modalTitle">ยืนยันการออกจากระบบ</h4><a href="login.html" class="small alert button">ตกลง</a><a aria-label="Close" class="close-reveal-modal">×</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-9 columns">
+        <div class="user-head"><img src="https://img-i.zeebox.com/images/profile/generic/Empty_Profile_07.png">
+          <p>สวัสดี จิรัฐ อ้นอารี !</p>
+        </div>
+        <div class="tabs-content">
+          <div id="panel31" class="content active">
+            <div class="main-box">
+              <div class="row">
+                <div class="small-12 columns">
+                  <form>
+                    <fieldset>
+                      <legend>กิจกรรม abc ฝ่าย 555</legend>
+                      <div class="row">
+                        <div class="small-12 columns">
+                          <table>
+                            <thead>
+                              <th width="200">ชื่อ</th>
+                              <th width="200">นามสกุล</th>
+                              <th>คณะ</th>
+                              <th>ชั้นปี</th>
+                              <th>ดูข้อมูล</th>
+                              <th>ลบ</th>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td> <a data-reveal-id="view-1">View</a>
+                                  <div id="view-1" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal nocenter">
+                                    <div class="row">
+                                      <div class="small-7 columns small-centered">
+                                        <h4 id="modalTitle">จิรัฐ อ้นอารี</h4>
+                                        <p>คณะ 555 ชั้นปี 2</p>
+                                        <p>ฝ่ายที่สนใจ </p>
+                                        <ol> 
+                                          <li>555</li>
+                                          <li>555</li>
+                                          <li>555</li>
+                                        </ol>
+                                        <p>แนะนำตนเอง</p>
+                                        <p>sdlfdjhgldsfjgdslfjgldsfjgdlsfkjg</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td><a data-reveal-id="delete-1">Delete</a>
+                                  <div id="delete-1" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal invite">
+                                    <h4 id="modalTitle">ยืนยันการลบ</h4>
+                                    <ul class="secondary button-group round">
+                                      <li><a href="#" class="small alert button">ยกเลิก</a></li>
+                                      <li><a href="#" class="small success button">ตกลง</a></li>
+                                    </ul><a aria-label="Close" class="close-reveal-modal">×</a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td><a>View</a></td>
+                                <td><a>Delete</a></td>
+                              </tr>
+                              <tr>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td><a>View</a></td>
+                                <td><a>Delete</a></td>
+                              </tr>
+                              <tr>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td>dfkgdfgkdg</td>
+                                <td>adsdfsdf</td>
+                                <td><a>View</a></td>
+                                <td><a>Delete</a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form><a href="activity-own-edit.html">ย้อนกลับ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/jquery.js"></script>
+    <script type="application/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation-datepicker/js/foundation-datepicker.js"></script>
+    <script type="application/javascript">
+      $(document).foundation();
+      $(document).ready( function() {
+      	$('.change-date').fdatepicker({
+      		format: 'dd/mm/yyyy'
+      	});
+      });
+    </script>
+  </body>
+</html>

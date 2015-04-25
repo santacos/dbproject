@@ -1,0 +1,141 @@
+doctype html
+html.no-js(lang='th')
+	head
+		meta(charset="utf-8")
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title ActivityDB
+		link(rel="stylesheet", type="text/css", href="http://fonts.googleapis.com/css?family=Lato:300,400,700")
+		link(rel='stylesheet', href='bower_components/foundation/css/normalize.css')
+		link(rel='stylesheet', href='bower_components/foundation/css/foundation.css')
+		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.css')
+		link(rel="stylesheet", type="text/css", href="css/app.css")
+		link(rel="stylesheet", type="text/css", href="bower_components/foundation-datepicker/stylesheets/foundation-datepicker.css")
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/modernizr.js")
+		style(type="text/css").
+			html,body {
+				margin: 0;
+				background-image: url('img/bg-blur.png');
+				background-size: cover;
+				overflow: hidden;
+			}
+	body
+		.head-bg
+		.row(style="padding-top: 70px")
+			.small-3.columns(style="position: relative;")
+				.navigator
+					ul.tabs.vertical(data-tab='',style="width: 228px; max-width:228px;")
+						li.app-name
+							p ActivityDB
+						li.tab-title(onclick="location.href = 'index.html';")
+							a(href='index.html') กิจกรรมทั้งหมด
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'search.html';")
+							a(href='#panel21') ค้นหาผู้ร่วมกิจกรรม
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'activity-own.html';")
+							a(href='#panel31') กิจรรมของคุณ
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'activity-join.html';")
+							a(href='#panel41') กิจกรรมที่คุณเข้าร่วม
+								i.fa.fa-caret-right
+						li.tab-title(onclick="location.href = 'request.html';")
+							a(href='#panel51') คำร้องขอ/คำเชิญ
+								i.fa.fa-caret-right
+						li.tab-title.active(onclick="location.href = 'account.html';")
+							a(href='#panel61') แก้ไขข้อมูลส่วนตัว
+								i.fa.fa-caret-right
+						li.tab-title
+							a(data-reveal-id="logout") ออกจากระบบ
+							#logout.reveal-modal.join(data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog")
+								h4#modalTitle ยืนยันการออกจากระบบ
+								a.small.alert.button(href='login.html') ตกลง
+								a.close-reveal-modal(aria-label="Close") ×
+			.small-9.columns
+				.user-head
+					img(src="https://img-i.zeebox.com/images/profile/generic/Empty_Profile_07.png")
+					p สวัสดี จิรัฐ อ้นอารี !
+
+				.tabs-content
+					#panel61.content.active
+						.main-box(style="padding-left: 60px")
+							form(id="", method="", action="")
+								.row
+									.small-1.columns
+									.small-11.columns(style="padding-left: 5px;")
+										.row
+											.small-5.columns
+												.row
+													.small-3.columns
+														label.right.inline ชื่อ : 
+													.small-9.columns
+														input(type="text", placeholder="name").input-radius
+											.small-6.columns.end(style="margin-left: -20px")
+												.row
+													.small-4.columns
+														label.right.inline นามสกุล : 
+													.small-8.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-5.columns
+												.row
+													.small-3.columns
+														label.right.inline ชื่อเล่น : 
+													.small-9.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-7.columns.end(style="margin-left: -55px")
+												.row
+													.small-4.columns
+														label.right.inline เบอร์โทรศัพท์ : 
+													.small-8.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-6.columns.end(style="margin-left: -13px")
+												.row
+													.small-3.columns
+														label.right.inline อีเมล : 
+													.small-9.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-8.columns.end(style="margin-left: -70px")
+												.row
+													.small-4.columns
+														label.right.inline รายละเอียดของตน : 
+													.small-8.columns.end
+														textarea(placeholder="555", style="border-radius: 5px;")
+										.row
+											.small-7.columns.end(style="margin-left: -55px")
+												.row
+													.small-4.columns
+														label.right.inline รหัสผ่านเก่า : 
+													.small-8.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-7.columns.end(style="margin-left: -55px")
+												.row
+													.small-4.columns
+														label.right.inline รหัสผ่านใหม่ : 
+													.small-8.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-7.columns.end(style="margin-left: -55px")
+												.row
+													.small-4.columns
+														label.right.inline รหัสผ่านใหม่อีกครั้ง : 
+													.small-8.columns
+														input(type="text", placeholder="name").input-radius
+										.row
+											.small-7.columns
+												input(type="submit", value="Let's go !")#submit-info
+
+
+		script(type="application/javascript", src="bower_components/foundation/js/vendor/jquery.js")
+		script(type="application/javascript", src="bower_components/foundation/js/foundation.min.js")
+		script(src="bower_components/foundation-datepicker/js/foundation-datepicker.js")
+		script(type="application/javascript").
+			$(document).foundation();
+			$(document).ready( function() {
+				$('.change-date').fdatepicker({
+					format: 'dd/mm/yyyy'
+				});
+			});

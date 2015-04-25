@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="th" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActivityDB</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/foundation-datepicker/stylesheets/foundation-datepicker.css">
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/modernizr.js"></script>
+    <style type="text/css">
+      html,body {
+      	margin: 0;
+      	background-image: url('img/bg-blur.png');
+      	background-size: cover;
+      	overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!---->
+    <!-- Left Menu Panel-->
+    <div style="padding-top: 70px" class="row">
+      <div style="position: relative;" class="small-3 columns">
+        <div class="navigator">
+          <ul data-tab="" style="width: 228px; max-width:228px;" class="tabs vertical">
+            <li class="app-name">
+              <p>ActivityDB</p>
+            </li>
+            <!---->
+            <!-- Menu List-->
+            <li onclick="location.href = 'index.html';" class="tab-title active"><a href="index.html">กิจกรรมทั้งหมด<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'search.html';" class="tab-title"><a href="#panel21">ค้นหาผู้ร่วมกิจกรรม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-own.html';" class="tab-title"><a href="#panel31">กิจรรมของคุณ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'activity-join.html';" class="tab-title"><a href="#panel41">กิจกรรมที่คุณเข้าร่วม<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="location.href = 'request.html';" class="tab-title"><a href="#panel51">คำร้องขอ/คำเชิญ<i class="fa fa-caret-right"></i></a></li>
+            <li onclick="locationation.href = 'account.html';" class="tab-title"><a href="#panel61">แก้ไขข้อมูลส่วนตัว<i class="fa fa-caret-right"></i></a></li>
+            <li class="tab-title"><a data-reveal-id="logout">ออกจากระบบ</a>
+              <div id="logout" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                <h4 id="modalTitle">ยืนยันการออกจากระบบ</h4><a href="login.html" class="small alert button">ตกลง</a><a aria-label="Close" class="close-reveal-modal">×</a>
+              </div>
+            </li>
+            <!---->
+          </ul>
+        </div>
+      </div>
+      <!---->
+      <!-- Right Content Panel-->
+      <div class="small-9 columns">
+        <div class="user-head"><img src="https://img-i.zeebox.com/images/profile/generic/Empty_Profile_07.png">
+          <p>สวัสดี จิรัฐ อ้นอารี !</p>
+        </div>
+        <div class="tabs-content">
+          <div id="panel11" class="content active">
+            <div class="main-box">
+              <div class="row">
+                <!---->
+                <!-- Search Form-->
+                <form>
+                  <div class="small-5 columns">
+                    <div class="row collapse postfix-round">
+                      <div class="small-10 columns">
+                        <input type="text" placeholder="ค้นหากิจกรรม..">
+                      </div>
+                      <div class="small-2 columns"><a href="#" class="button success postfix"><i class="fa fa-search"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="small-3 columns">
+                    <select>
+                      <option value="" disabled selected>ฝ่ายที่สนใจ..</option>
+                      <option value="saab">Lamborghini</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                  <div class="small-4 columns">
+                    <select>
+                      <option value="" disabled selected>หน่วยงานที่กิจกรรมสังกัด..</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </div>
+                </form>
+                <!---->
+              </div>
+              <div style="padding-top: 15px;" class="row">
+                <div class="small-12 columns">
+                  <!---->
+                  <!-- Result Table-->
+                  <table>
+                    <!---->
+                    <!-- Header of Table-->
+                    <thead>
+                      <tr>
+                        <th width="200">ชื่อกิจกรรม</th>
+                        <th width="200">ชื่อฝ่าย</th>
+                        <th style="border-bottom: 1px solid white;">วันเริ่มกิจกรรม</th>
+                        <th>วันสิ้นสุด</th>
+                        <th>จำนวนคนปัจจุบัน</th>
+                        <th>รายละเอียด</th>
+                        <th>เข้าร่วม</th>
+                      </tr>
+                    </thead>
+                    <!---->
+                    <!-- Body of Table-->
+                    <!-- Each 'tr' is row. Each 'td' is column-->
+                    <tbody>
+                      <tr>
+                        <td>sdfsdf</td>
+                        <td>sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center"><a data-reveal-id="view-1">view</a>
+                          <div id="view-1" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+                            <div class="row">
+                              <div class="small-9 columns small-centered">
+                                <h3>ชื่อกิจกรรม : 555</h3>
+                                <h3>ฝ่าย : 555</h3>
+                                <p>วันที่เริ่ม : 1/2/3 วันที่สิ้นสุด : 1/2/3</p>
+                                <p>จำนวนคนขึ้นต่ำ : 33  จำนวนคนปัจจุบัน : 44  จำนวนคนสูงสุด : 2222</p>
+                                <p>รายละเอียดกิจกรรม : sdghhbgsdfghdfhgdskhgjl;dsgj;dsfjgdsfjhgdjksfhgjdfs;jghjdsfgjdfgjjdsfgdsgkdfsjgdsfg</p>
+                              </div>
+                            </div><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                        <td class="text-center"> <a data-reveal-id="join-1">join</a>
+                          <div id="join-1" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                            <h4 id="modalTitle">ยืนยันการขอเข้าร่วม</h4>
+                            <ul class="secondary button-group round">
+                              <li><a href="#" class="small alert button">ยกเลิก</a></li>
+                              <li><a href="#" class="small success button">ตกลง</a></li>
+                            </ul><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>sdfsdf</td>
+                        <td>sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center"><a data-reveal-id="view-2">view</a>
+                          <div id="view-2" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+                            <h4 id="modalTitle">lol</h4>
+                            <p class="lead">mind</p>
+                            <p>fuck</p><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                        <td class="text-center"> <a data-reveal-id="join-2">join</a>
+                          <div id="join-2" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                            <h4 id="modalTitle">ยืนยันการขอเข้าร่วม</h4>
+                            <ul class="secondary button-group round">
+                              <li><a href="#" class="small alert button">ยกเลิก</a></li>
+                              <li><a href="#" class="small success button">ตกลง</a></li>
+                            </ul><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>sdfsdf</td>
+                        <td>sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center">sdfsdf</td>
+                        <td class="text-center"><a data-reveal-id="view-3">view</a>
+                          <div id="view-3" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+                            <h4 id="modalTitle">lol</h4>
+                            <p class="lead">mind</p>
+                            <p>fuck</p><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                        <td class="text-center"> <a data-reveal-id="join-3">join</a>
+                          <div id="join-3" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal join">
+                            <h4 id="modalTitle">ยืนยันการขอเข้าร่วม</h4>
+                            <ul class="secondary button-group round">
+                              <li><a href="#" class="small alert button">ยกเลิก</a></li>
+                              <li><a href="#" class="small success button">ตกลง</a></li>
+                            </ul><a aria-label="Close" class="close-reveal-modal">×</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <!-- Script On Every Page-->
+    <script type="application/javascript" src="bower_components/foundation/js/vendor/jquery.js"></script>
+    <script type="application/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/foundation-datepicker/js/foundation-datepicker.js"></script>
+    <script type="application/javascript">
+      $(document).foundation();
+      $(document).ready( function() {
+      	$('.change-date').fdatepicker({
+      		format: 'dd/mm/yyyy'
+      	});
+      });
+    </script>
+    <!---->
+  </body>
+</html>
