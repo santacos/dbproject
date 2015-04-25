@@ -1,0 +1,22 @@
+{
+  "name": "dbproject",
+  "version": "0.0.0",
+  "description": "lol",
+  "authors": [
+    "jirat"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1",
+    "font-awesome": "~4.3.0",
+    "foundation-datepicker": "~1.3.0"
+  }
+}
