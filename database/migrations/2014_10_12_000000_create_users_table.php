@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('firstname',20);
 			$table->string('lastname',30);
 			$table->string('nickname',20);
+			$table->integer('year');
 			$table->string('sex',1);
 			$table->date('birthdate');
 			$table->string('tel',10);

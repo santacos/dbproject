@@ -17,12 +17,13 @@ class Affiliation extends Model {
 
 	public function activitys()
     {
-        return $this->hasMany('App\Activitys');
+        return $this->hasMany('App\Activitys','act_id');
     }
 
-    // public function users()
-    // {
-    //     return $this->belongsToMany('App\User');
-    // }
+    public function users()
+    {
+    	return $this->belongsToMany('App\Users','affiliated','aff_id','user_id');
+    }
+
 
 }

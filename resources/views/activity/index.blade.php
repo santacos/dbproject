@@ -44,8 +44,9 @@
 					          		@endforeach
 					      		</td>
 					      		<td>
-					      			<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">view</a>
-					      		</td>
+									<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-primary">view</a>
+				      				<a href="{{url('adddepart/create?id='.$activity->act_id)}}" class="btn btn-info">Dep</a>
+								</td>
 					        </tr>
 					        @endforeach
 					    </tbody>

@@ -22,5 +22,11 @@ Route::controllers([
 
 Route::get('youractivity', 'ActivityController@yourActivity');
 //Route::get('youractivity', ['middleware' => 'auth', 'ActivityController@yourActivity']);
-Route::resource('activity','ActivityController', ['only'=> ['index','create','store','show']]);
+Route::resource('activity','ActivityController', ['only'=> ['index','create','store','show','edit']]);
 
+Route::get('dept','DepartmentController@sendDepartment');
+Route::resource('adddepart','DepartmentController',['only'=> ['index','create','store','show','edit']]);
+
+Route::controller('recruitment','RecruitmentController');
+
+Route::controller('user','UserController');

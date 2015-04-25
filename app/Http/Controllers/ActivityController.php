@@ -77,8 +77,12 @@ class ActivityController extends Controller {
 		$activity->save();
 
 		$user->activity()->attach($activity->act_id);
-		Session::flash('message', 'Successfully updated!');
-		return redirect('activity');
+
+		// Session::flash('message', 'Successfully updated!');
+		// return redirect('activity');
+
+		return redirect()->action('DepartmentController@create',['id'=> $activity->act_id]);
+		//return redirect()->route('profile', [1]);
 	}
 
 	/**
@@ -89,10 +93,9 @@ class ActivityController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
 		$activity = \App\Activity::has('affiliation')->where('act_id','=',$id)->first();
-
-		return view('activity.show',compact('activity'));
+		$recDBs = \App\Recruitment::with('activity','department')->where('act_id',$id)->get();
+		return view('activity.show',compact('activity','recDBs'));
 	}
 
 	/**
@@ -104,6 +107,7 @@ class ActivityController extends Controller {
 	public function edit($id)
 	{
 		//
+		return 'edit this activity page';
 	}
 
 	/**
@@ -130,10 +134,20 @@ class ActivityController extends Controller {
 
 
 	public function yourActivity(){
-		
+		if(Auth::check()){
 		$user = Auth::user();
 		$activities = \App\User::find($user->id)->activity;
 		return view('activity.youractivity',compact('activities','user'));
+
+
+
+
+
+		}else{
+			Session::flash('message', 'Please log in!');
+			return redirect('activity');
+
+		}
 		
 	}
 }

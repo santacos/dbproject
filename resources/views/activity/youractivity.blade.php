@@ -14,6 +14,10 @@
 					<a href="{{url('/activity')}}" class="btn btn-success" style="margin-bottom:1em;">All activity</a>
 					
 					{{$user}}
+
+				
+
+					@if(count($activities) > 0)
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
@@ -44,11 +48,15 @@
 					      		</td>
 					      		<td>
 					      			<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">view</a>
+					      			
 					      		</td>
 					        </tr>
 					        @endforeach
 					    </tbody>
 				    </table>
+				    @else
+				    <h2>You don't have any activities.</h2>
+				    @endif
 					
    				</div>
 			</div>

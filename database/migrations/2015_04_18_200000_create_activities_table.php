@@ -84,6 +84,7 @@ class CreateActivitiesTable extends Migration {
 			$table->integer('min_num')->unsigned();
 			$table->integer('current_num')->unsigned();
 			$table->integer('max_num')->unsigned();
+			$table->timestamps();
 		});
 
 		Schema::create('application',function(Blueprint $table)
@@ -99,6 +100,7 @@ class CreateActivitiesTable extends Migration {
 
 			$table->integer('rec_id')->unsigned();
 			$table->foreign('rec_id')->references('rec_id')->on('recruitment');
+			$table->timestamps();
 
 		});
 
@@ -109,6 +111,7 @@ class CreateActivitiesTable extends Migration {
 			$table->foreign('rec_id')->references('rec_id')->on('recruitment');
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
+			$table->timestamps();
 
 		});
 

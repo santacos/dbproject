@@ -48,6 +48,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->belongsToMany('App\Activity','manage_activity','user_id','act_id');
     }
 
+    public function affiliation(){
+    	return $this->belongsToMany('App\User','affiliated','user_id','aff_id');
+    }
+
+    public function application(){
+    	return $this->hasMany('App\Application','app_id');
+    }
+
    
 
 }

@@ -22,6 +22,11 @@ class Activity extends Model {
         return $this->belongsToMany('App\User','manage_activity','act_id', 'user_id');
     }
 
+    public function recruitments(){
+    	return $this->hasMany('App\Recruitment','rec_id');
+    }
+
+
  
 
 }
