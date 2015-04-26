@@ -48,8 +48,8 @@
 											@endforeach
 										</td>
 										<td>
-											<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">view</a>
-
+											<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">ดูรายละเอียด</a>
+											<a href="{{url('adddepart/create?id='.$activity->act_id)}}" class="btn btn-info">จัดการ</a>
 										</td>
 									</tr>
 									@endforeach
@@ -57,9 +57,9 @@
 							</table>
 							@else
 							<div class="callout callout-danger">
-                    		<h4>You don't have any activity.</h4>
-                    		<p>Click on create new activity to create one.</p>
-                  			</div>
+								<h4>You don't have any activity.</h4>
+								<p>Click on create new activity to create one.</p>
+							</div>
 							@endif
 						</div>
 					</div><!-- /.box-body -->
