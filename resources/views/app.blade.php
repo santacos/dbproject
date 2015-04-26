@@ -17,6 +17,7 @@
     <link href="{{ asset('/dist/css/skins/_all-skins.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="{{ asset('/plugins/iCheck/flat/blue.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css">
     <!-- Morris chart -->
     <link href="{{ asset('/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
@@ -35,15 +36,19 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
+  @if (Auth::guest())
+    @yield('content')
+  @else
+            <!-- Content Wrapper. Contains page content -->
   <body class="skin-blue sidebar-mini">
     <div class="wrapper">
       
       @include('topbar')
       <!-- Left side column. contains the logo and sidebar -->
       @include('sidebar')
-      <!-- Content Wrapper. Contains page content -->
+      
       <div class="content-wrapper">
-      @yield('content')
+        @yield('content')
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -260,4 +265,5 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('/dist/js/demo.js') }}" type="text/javascript"></script>
   </body>
+  @endif
 </html>
