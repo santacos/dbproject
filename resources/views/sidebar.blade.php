@@ -17,7 +17,7 @@
           <ul class="sidebar-menu">
             <li class="header">เมนูหลัก</li>
             <li @yield('active_1')>
-              <a href="#">
+              <a href="{{ url('/activity') }}">
                 <i class="fa fa-th"></i> <span>กิจกรรมทั้งหมด</span>
                 <small class="label pull-right bg-green">new</small>
               </a>
@@ -28,7 +28,7 @@
               </a>
             </li>
             <li @yield('active_3')>
-              <a href="#">
+              <a href="{{ url('/youractivity') }}">
                 <i class="fa fa-sitemap"></i> <span>กิจกรรมของคุณ</span>
                 <small class="label pull-right bg-red">3</small>
               </a>
@@ -51,7 +51,7 @@
               </a>
             </li>
             <li @yield('active_7')>
-              <a href="#">
+              <a href="{{ url('/auth/logout') }}">
                 <i class="fa fa-sign-out"></i> <span>ออกจากระบบ</span>
               </a>
             </li>
