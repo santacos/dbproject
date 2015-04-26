@@ -54,6 +54,7 @@
 			    		<thead>
 			    			<th>Name</th>
 			    			<th>Detail</th>
+			    			<th>Current num</th>
 			    			<th>Min num</th>
 			    			<th>Max num</th>
 			    			<th>Action</th>
@@ -62,7 +63,8 @@
 			    			@foreach($recDBs as $recDB)
 			    			<tr>
 			    				<td>{{$recDB->department->name}}</td>
-			    				<td>{{$recDB->edited_dep_detail}}</td>
+			    				<td style="width:30%;">{{$recDB->edited_dep_detail}}</td>
+			    				<td>{{$recDB->current_num}}</td>
 			    				<td>{{$recDB->min_num}}</td>
 			    				<td>{{$recDB->max_num}}</td>
 			    				<td> <a class="btn btn-success btn-sm">Edit</a>

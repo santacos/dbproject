@@ -58,14 +58,27 @@ class RecruitmentController extends Controller {
 	public function getAddmember(Request $request,Authenticatable $user){
 		if(Auth::check()){
 			$rec_id = Request::input('id');
-			$apps = DB::table('application')->where('rec_id',$rec_id)->get();
+			$userinrec =DB::table('application')->where('rec_id',$rec_id)->get(array('user_id'));
 			$cur_user = $user;
+			$inmem=[$cur_user->id];
+			$i=1;
+			foreach ($userinrec as $uin) {
+				$inmem = array_add($inmem,$i,$uin->user_id);
+				$i=$i+1;
+			}
+
+
+
+
+			$inapps = \App\Application::with('user','recruitment')->orderBy('updated_at', 'desc')->where('rec_id',$rec_id)->where('status',1)->get();
+			$sendapps = \App\Application::with('user','recruitment')->orderBy('created_at', 'desc')->where('rec_id',$rec_id)->where('sender_flag',true)->get();
+			$requestapps = \App\Application::with('user','recruitment')->orderBy('created_at', 'desc')->where('rec_id',$rec_id)->where('sender_flag',false)->where('status',2)->get();
+			
 			//not current user
-			$users = DB::table('users')->where('id','<>',$cur_user->id)->get();
-			//return $apps;
-			return view('recruitment.manage',compact('users','cur_user','rec_id'));
-			//$appuser = $user->application();
-			//return $appuser;
+			$newusers = DB::table('users')->where('id','<>',$cur_user->id)->whereNotIn('id', $inmem)->get();
+			//return $inmem;
+			return view('recruitment.manage',compact('newusers','cur_user','rec_id','sendapps','requestapps','inapps'));
+			
 		}else{
 			return view('home');
 		}
@@ -94,13 +107,32 @@ class RecruitmentController extends Controller {
 		$application = new \App\Application;
 		$application->message = Request::input('message');
 		$application->sender_flag=true;
-		$application->status=1;
+		$application->status=2;
 		$application->user_id=$mem_id;
 		$application->rec_id=$rec_id;
 		$application->save();
 		
 		// $application = $user->applicaton()->save($application);
 		// $application = $recruitment->applicaton()->save($application);
+
+		return redirect('recruitment/addmember?id='.$rec_id);
+	}
+
+	public function getAccept(Request $request){
+		$app_id = Request::input('id');
+		$status = Request::input('st');
+
+		$application = \App\Application::with('recruitment')->where('app_id',$app_id)->first();
+		$application->status = $status;
+		$application->save();
+		$rec_id = $application->recruitment->rec_id;
+
+		//save to registration
+
+		$registration = new \App\Registration;
+		$registration->user_id = $application->user_id;
+		$registration->rec_id = $application->rec_id;
+		$registration->save();
 
 		return redirect('recruitment/addmember?id='.$rec_id);
 	}

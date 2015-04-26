@@ -6,15 +6,116 @@
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">Home</div>
-
 				<div class="panel-body">
-
-
-					<h3>Member</h3>
+					<h3>รายชื่อผู้ที่อยู่ในฝ่าย</h3>
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
-					          <th>#</th>
+					        	<th>App ID</th>
+					          <th>Firstname</th>
+					          <th>Lastname</th>
+					          <th>Nickname</th>
+					          <th>status</th>
+					          <th>created_at</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    	@foreach($inapps as $app)
+					        <tr>
+					          	<td>{{$app->app_id}}</td>
+					          	<td>{{$app->user->firstname}}</td>
+					          	<td>{{$app->user->lastname}}</td>
+					          	<td>{{$app->user->nickname}}</td>
+					          	@if($app->status==0)<td>ปฏิเสธ</td>
+					        	@elseif($app->status==1)<td>รับแล้ว</td>
+					        	@elseif($app->status==2)<td>รอการตอบรับ</td>
+					        	@endif
+					        	<td>{{$app->created_at}}</td><!-- 
+					        	<td> {{$app->user->id}}</td> -->
+
+					          	
+					        </tr>
+					        @endforeach
+					    </tbody>
+				    </table>
+				    <hr>
+
+					<h3>คำร้องที่ต้องตอบรับ</h3>
+					<table class="table table-bordered table-hover">
+					    <thead>
+					        <tr>
+					        	<th>App ID</th>
+					          <th>Firstname</th>
+					          <th>Lastname</th>
+					          <th>Nickname</th>
+					          <th>status</th>
+					          <th>created_at</th>
+					          <th>action</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    	@foreach($requestapps as $app)
+					        <tr>
+					          	<td>{{$app->app_id}}</td>
+					          	<td>{{$app->user->firstname}}</td>
+					          	<td>{{$app->user->lastname}}</td>
+					          	<td>{{$app->user->nickname}}</td>
+					          	@if($app->status==0)<td>ปฏิเสธ</td>
+					        	@elseif($app->status==1)<td>รับแล้ว</td>
+					        	@elseif($app->status==2)<td>รอการตอบรับ</td>
+					        	@endif
+					        	<td>{{$app->created_at}}</td>
+					        	<td>
+					        		<a href="{{ url('/recruitment/accept?id='.$app->app_id.'&&st=1') }}" class="btn btn-success">Accept</a>
+					        		<a href="{{ url('/recruitment/accept?id='.$app->app_id.'&&st=0') }}" class="btn btn-danger">Reject</a>
+				      			</td>
+
+					          	
+					        </tr>
+					        @endforeach
+					    </tbody>
+				    </table>
+				    <hr>
+
+				    <h3>ติดตามคำเชิญที่ส่งไป</h3>
+					<table class="table table-bordered table-hover">
+					    <thead>
+					        <tr>
+					        	<th>App ID</th>
+					          <th>Firstname</th>
+					          <th>Lastname</th>
+					          <th>Nickname</th>
+					          <th>status</th>
+					          <th>created_at</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					    	@foreach($sendapps as $app)
+					        <tr>
+					          	<td>{{$app->app_id}}</td>
+					          	<td>{{$app->user->firstname}}</td>
+					          	<td>{{$app->user->lastname}}</td>
+					          	<td>{{$app->user->nickname}}</td>
+					          	@if($app->status==0)<td>ปฏิเสธ</td>
+					        	@elseif($app->status==1)<td>รับแล้ว</td>
+					        	@elseif($app->status==2)<td>รอการตอบรับ</td>
+					        	@endif
+					        	<td>{{$app->created_at}}</td>
+
+					          	
+					        </tr>
+					        @endforeach
+					    </tbody>
+				    </table>
+				    <hr>
+
+
+
+					<h3>กดเชิญคนเพิ่ม</h3>
+					<table class="table table-bordered table-hover">
+					    <thead>
+					        <tr>
+					          <th>User ID</th>
 					          <th>Firstname</th>
 					          <th>Lastname</th>
 					          <th>Nickname</th>
@@ -23,7 +124,7 @@
 					        </tr>
 					    </thead>
 					    <tbody>
-					    	@foreach($users as $user)
+					    	@foreach($newusers as $user)
 					        <tr>
 					          	<th scope="row">{{$user->id}}</th>
 					          	<td>{{$user->firstname}}</td>
@@ -39,8 +140,9 @@
 					        @endforeach
 					    </tbody>
 				    </table>
+				    <hr>
 
-					<h3>current user:</h3> {{$cur_user->id}}
+					<h3>current user id:</h3> {{$cur_user->id}}
    				</div>
 			</div>
 		</div>

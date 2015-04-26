@@ -82,7 +82,8 @@
 				    				<td>{{$recDB->edited_dep_detail}}</td>
 				    				<td>{{$recDB->min_num}}</td>
 				    				<td>{{$recDB->max_num}}</td>
-				    				<td> <a class="btn btn-success btn-sm">Edit</a>
+				    				<td>
+				    					<a href="{{url('recruitment/addmember?id='.$recDB->rec_id)}}" class="btn btn-warning btn-sm">manage</a>
 				    					<!-- <a class="btn btn-success btn-sm" ng-click="editDepart(dep)">edit</a> -->
 				    				</td>
 								</tr>

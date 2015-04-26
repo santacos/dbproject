@@ -22,5 +22,9 @@ class Recruitment extends Model {
         return $this->hasMany('App\Application','app_id');
     }
 
+    public function registration(){
+        return $this->hasMany('App\Registration','reg_id');
+    }
+
 
 }
