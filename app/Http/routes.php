@@ -30,3 +30,5 @@ Route::resource('adddepart','DepartmentController',['only'=> ['index','create','
 Route::controller('recruitment','RecruitmentController');
 
 Route::controller('user','UserController');
+
+Route::controller('joinactivity','YouractivityController');

@@ -13,10 +13,7 @@ class="active"
 				<div class="col-md-10 col-md-offset-1">
 					<div class="row">
 					<div class="col-xs-9">
-						<h1 style="margin: 0; padding-bottom: 30px;">  Your Activities <small>รายการกิจกรรมทั้งหมดของคุณ</small></h1>
-					</div>
-					<div class="col-xs-3">
-						<a href="{{url('/activity/create')}}" class="btn btn-primary btn-lg" style="position:relative;">สร้างกิจกรรมใหม่</a>
+						<h1 style="margin: 0; padding-bottom: 30px;">  Your Activities <small>รายการกิจกรรมทั้งหมดที่ได้เข้าร่วม</small></h1>
 					</div>
 				</div>
 					<div class="box">
