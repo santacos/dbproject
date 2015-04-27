@@ -560,19 +560,307 @@ class StudentTableSeeder extends Seeder {
         DB::table('students')->delete();
 
         
-        // $pages = array(
-
-        // array('user_id'=>1,'description'=>'หล่อ รวย สปอร์ตใจดี','year'=>3),
-        // array('user_id'=>2,'description'=>'สวย อึ๋ม สปอร์ตใจดี','year'=>4),
-
-        // );
         $student = new \App\Student;
-        $student->user_id = 1;
-        $student->description = 'หล่อ รวย สปอร์ตใจดี';
-        $student->year = 3;
-        $student->save();
+                $student->user_id = 1;
+                $student->description = 'หล่อ รวย ใจดี ';
+                $student->year = 4;
+                $student->save();
 
-        // DB::table('students')->insert($pages);
+        $student = new \App\Student;
+                $student->user_id = 2;
+                $student->description = 'ขี้เหร่ แต่รักเด็ก ';
+                $student->year = 4;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 3;
+                $student->description = 'วิศวะ กอดอุ่น ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 4;
+                $student->description = 'หน้าสิว เรียนไม่เก่ง ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 5;
+                $student->description = 'อ้วน ดำ ล่ำ เตี้ย ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 6;
+                $student->description = 'หน้าโง่ แต่เอช้วน ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 7;
+                $student->description = 'ตีดอท ชอบถ่ายรูป ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 8;
+                $student->description = 'ขับพอร์ช บ้านรวย ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 9;
+                $student->description = 'ใช้ไอโฟน มีแฟนแล้ว ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 10;
+                $student->description = 'หล่อมาก เป็นเกย์ ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 11;
+                $student->description = 'ชอบเที่ยวกลางคืน โสดสนิท ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 12;
+                $student->description = 'ขี้เหร่ อยากมีแฟนบัญชี ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 13;
+                $student->description = 'ชอบสีขาว ใช้นาฬิกา PAM ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 14;
+                $student->description = ' ลูกเจ้าของ CP บ้านเลี้ยงหมาสิบตัว';
+                $student->year = 4;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 15;
+                $student->description = 'ใช้ MAC BOOK ชอบสีดำ เล่นบาสระดับโลก ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 16;
+                $student->description = 'นักมวยเก่า หล่อ ล่ำ เฟรนลี่ ';
+                $student->year = 4;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 17;
+                $student->description = 'นายแบบ คอแข็ง หุ่นดี ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 18;
+                $student->description = 'รักหมา ชอบกินกาแฟ สวย ';
+                $student->year = 4;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 19;
+                $student->description = 'ขาว หมวย สวย น่ารัก ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 20;
+                $student->description = 'ขาว สวย หมวย อึ๋ม ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 21;
+                $student->description = 'อกสะบึ้ม ขาว บัญชี ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 22;
+                $student->description = 'เรียน BBA ขาว ล่ำ หุ่นดี ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 23;
+                $student->description = 'ชอบขับรถ บ้านส่งแก๊ส ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 24;
+                $student->description = 'สวย คล้ำ มีพุง ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 25;
+                $student->description = 'อยากมีแฟนหล่อๆ วิศวะ ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 26;
+                $student->description = 'เป็นตุ้ดครุ ล่ำ คล้ำ สูง ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 27;
+                $student->description = 'ชอบกินน้ำแข็งใส เด็กสถาปัตย์ ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 28;
+                $student->description = 'หมอ รวย ใจดี ขี้เหร่ ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 29;
+                $student->description = 'วิทย์กีฬา หล่อ ล่ำ ดำ คล้ำ ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 30;
+                $student->description = 'อักษร ชอบเที่ยวต่างประเทศ ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 31;
+                $student->description = ' ทันตะ หมอฟันอยากโดนฟัน';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 32;
+                $student->description = 'เภสัช ยาที่ดีที่สุดคือความรัก ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 33;
+                $student->description = 'ครุ หญิงแท้ สวย บึ้ม ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 34;
+                $student->description = 'วิศวะ เกียรตินิยม ชอบแมนยู ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 35;
+                $student->description = 'บัญชี เป็นเลสเบี้ยน ชอบสาววิทยา ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 36;
+                $student->description = 'ใส่แว่น เด็กดี สวย ขาว หมวยมาก ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 37;
+                $student->description = ' นิติ ไม่ค่อยมีเวลาว่าง เป็นที่ปรึกษาให้ได้';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 38;
+                $student->description = 'หล่อ จน ใช้ซัมซุงฮีโร่ ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 39;
+                $student->description = ' สวย ใจดี ตูดใหญ่ น่ารัก หมวย';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 40;
+                $student->description = ' เถิก ใจดี หมวย สวย อึ๋ม ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 41;
+                $student->description = ' บัญชี สวย บึ้ม เป็นดารา';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 42;
+                $student->description = 'วิศวะ หาคู่ขา ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 43;
+                $student->description = 'ขาว สวย หมวย ไม่อึ๋ม บ้านรวยนะ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 44;
+                $student->description = 'เรียนเก่ง หล่อ กุ้งแห้ง เด็กแว่น ';
+                $student->year = 4;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 45;
+                $student->description = 'แบดบอยวิศวะ กินเหล้า ดูดบุหรี่ ';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 46;
+                $student->description = ' ครุ กระเทยสวย ขาว ผอม มีหน้าอก';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 47;
+                $student->description = 'หล่อ รวย โสด เกรดเยอะ ';
+                $student->year = 3;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 48;
+                $student->description = ' หล่อ รวย เจ้าของห้าง';
+                $student->year = 1;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 49;
+                $student->description = 'สวย หมวย อึ๋ม ใช้ไอโฟน ';
+                $student->year = 2;
+                $student->save();
+
+        $student = new \App\Student;
+                $student->user_id = 50;
+                $student->description = 'กระเทย ดำ คล้ำ แต่เด็ด ';
+                $student->year = 2;
+                $student->save();
+
+
     }
 
 

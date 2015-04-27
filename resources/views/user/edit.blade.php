@@ -11,26 +11,26 @@
 					<h3 class="box-title">edit your profile</h3>
 				</div><!-- /.box-header -->
 				<div class="register-box-body">
-					<form class="form-horizontal" role="form" method="POST">
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/user/edit/'.$user->id) }}">
 						<div class='row'>
 							<div class='col-xs-4 col-xs-offset-1'>
 								<div class="form-group has-feedback">
 									<label>About</label>
-									<textarea class="form-control" rows="3" placeholder="describe yourself"></textarea>
+									<textarea class="form-control" rows="3" value="{{$description}}" placeholder="describe yourself"></textarea>
 								</div>
 								<div class="form-group has-feedback">
 									<label>Nick name</label>
-									<input type="text" class="form-control" name="nickname" value="" placeholder={{$user->nickname}}>
+									<input type="text" class="form-control" name="nickname" value="{{$user->nickname}}" placeholder="{{$user->nickname}}">
 									<span class="glyphicon glyphicon-user form-control-feedback"></span>
 								</div>
 								<div class="form-group has-feedback">
 									<label>E-mail</label>
-									<input type="email" class="form-control" name="email" value="" placeholder={{$user->email}}>
+									<label class="form-control" name="email" value="{{$user->email}}" placeholder="{{$user->email}}">{{$user->email}}</label>
 									<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 								</div>
 								<div class="form-group has-feedback">
 									<label>Mobile No.</label>
-									<input type="tel" class="form-control" name="telnumber" value="" placeholder={{$user->tel}}>
+									<input type="tel" class="form-control" name="telnumber" value="{{$user->tel}}" placeholder="{{$user->tel}}">
 									<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 								</div>
 
