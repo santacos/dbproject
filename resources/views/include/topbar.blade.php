@@ -14,6 +14,7 @@
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+              @if(Auth::check())
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -202,6 +203,7 @@
                   </li>
                 </ul>
               </li>
+              @endif
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 @if(Auth::check())
@@ -210,11 +212,14 @@
                   <span class="hidden-xs">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</span>
                 </a>
                 @else
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                <a href="{{url('auth/login')}}" class="dropdown-toggle">
                   <span class="hidden-xs">Log in</span>
                 </a>
-
+                <li class="dropdown">
+                <a href="{{ url('/auth/register') }}" class="dropdown-toggle">
+                  <span class="hidden-xs">Register</span>
+                </a>
+                </li>
                 @endif
                 <ul class="dropdown-menu">
                   <!-- User image -->

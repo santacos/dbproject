@@ -1,6 +1,6 @@
-@extends('app')
+@extends('appguest')
 
-@section('content')
+@section('contentforguest')
 <body class="register-page">
 	<div class="register-box">
 		<div class="register-logo">
