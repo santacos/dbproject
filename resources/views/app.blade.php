@@ -198,6 +198,7 @@
     </div><!-- ./wrapper -->
 
     @include('include.script')
+    @yield('script')
   </body>
   
 </html>

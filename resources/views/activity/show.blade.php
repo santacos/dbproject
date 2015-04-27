@@ -40,12 +40,6 @@
 					          		@endforeach
 					      		</td>
 					      	</tr>
-					      	<tr>
-					      		<th>Action</th>
-					      		<td>
-					      			<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">view</a>
-					      		</td>
-					        </tr>
 					    </tbody>
 				    </table>
 					<hr>
@@ -57,19 +51,29 @@
 			    			<th>Current num</th>
 			    			<th>Min num</th>
 			    			<th>Max num</th>
-			    			<!-- <th>Action</th> -->
+			    			<th>Action</th>
 			    		</thead>
 			    		<tbody>
 			    			@foreach($recDBs as $recDB)
+			    			<?php $i=0; ?>
 			    			<tr>
 			    				<td>{{$recDB->department->name}}</td>
 			    				<td style="width:30%;">{{$recDB->edited_dep_detail}}</td>
 			    				<td>{{$recDB->current_num}}</td>
 			    				<td>{{$recDB->min_num}}</td>
 			    				<td>{{$recDB->max_num}}</td>
-			    				<!-- <td> <a class="btn btn-success btn-sm">Edit</a>
-			    					<a href="{{url('recruitment/addmember?id='.$recDB->rec_id)}}" class="btn btn-warning btn-sm">manage</a>
-			    				</td> -->
+			    				<td> 
+			    					@if($action==1)<a href="{{url('recruitment/addmember?id='.$recDB->rec_id)}}" class="btn btn-success btn-sm">จัดการ</a>
+			    					@elseif($action==2)
+			    						@if($status[$i]==3)<a href="{{url('recruitment/request?id='.$recDB->rec_id)}}" class="btn btn-warning btn-sm">ขอเข้าร่วม</a>
+			    						@elseif($status[$i]==0)<a href="#" class="btn btn-danger btn-sm">คำร้องขอถูกปฏิเสธ</a>
+			    						@elseif($status[$i]==1)<a href="#" class="btn btn-success btn-sm">เข้าร่วมกิจกรรมแล้ว</a>
+			    						@elseif($status[$i]==2)<a href="#" class="btn btn-default btn-sm">รอการตอบรับ</a>
+			    						@endif
+			    					@elseif($action==2)<a href="#" class="btn btn-default btn-sm">เข้าร่วมแล้ว</a>
+			    					@elseif($action==5)<a href="{{url('auth/login')}}" class="btn btn-info btn-sm">เข้าสู่ระบบเพื่อเข้าร่วม</a>
+			    					@endif
+			    				</td>
 							</tr>
 			    			@endforeach
 			    		</tbody>

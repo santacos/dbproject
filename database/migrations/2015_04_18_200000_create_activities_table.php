@@ -21,6 +21,7 @@ class CreateActivitiesTable extends Migration {
 			$table->date('end_date');
 			$table->integer('aff_id')->unsigned();
 			$table->foreign('aff_id')->references('aff_id')->on('affiliations');
+			$table->integer('status')->default(0)->unsigned();
 			$table->timestamps();
 		});
 
@@ -84,6 +85,7 @@ class CreateActivitiesTable extends Migration {
 			$table->integer('min_num')->unsigned();
 			$table->integer('current_num')->unsigned();
 			$table->integer('max_num')->unsigned();
+			$table->integer('status')->default(0)->unsigned();
 			$table->timestamps();
 		});
 
@@ -92,7 +94,7 @@ class CreateActivitiesTable extends Migration {
 			$table->increments('app_id');
 			
 			$table->string('message',300);
-			$table->integer('status')->unsigned();
+			$table->integer('status')->default(2)->unsigned();
 			$table->boolean('sender_flag');
 
 			$table->integer('user_id')->unsigned();

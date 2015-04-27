@@ -89,6 +89,7 @@ class RecruitmentController extends Controller {
 		$rec_id = Request::input('id');
 		$mem_id = Request::input('mid');
 
+
 		$user = \App\User::find($mem_id);
 
 
@@ -135,5 +136,37 @@ class RecruitmentController extends Controller {
 		$registration->save();
 
 		return redirect('recruitment/addmember?id='.$rec_id);
+	}
+
+	public function getRequest(Request $request){
+		if(Auth::check()){
+			$rec_id = Request::input('id');
+			$recruitment = \App\Recruitment::with('department','activity')->where('rec_id',$rec_id)->first();
+
+			return view('recruitment.request',compact('recruitment','rec_id'));
+
+			
+		}else{
+			return redirect('/home');
+		}
+		
+	}
+	public function postRequest(Request $request){
+		$rec_id = Request::input('id');
+		$recruitment = \App\Recruitment::with('department','activity')->where('rec_id',$rec_id)->first();
+		$user = Auth::user();
+
+		$act_id = $recruitment->activity->act_id;
+		// return $act_id;
+ 
+		$application = new \App\Application;
+		$application->message = Request::input('message');
+		$application->sender_flag=false;
+		$application->status=2;
+		$application->user_id=$user->id;
+		$application->rec_id=$rec_id;
+		$application->save();
+		return redirect('/activity/'.$act_id); 
+
 	}
 }

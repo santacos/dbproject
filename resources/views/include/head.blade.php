@@ -22,3 +22,5 @@
     <link href="{{ asset('/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- jQuery 2.1.3 -->
+    <script src="{{asset('plugins/jQuery/jQuery-2.1.3.min.js')}}"></script>
