@@ -113,7 +113,7 @@ class="active"
     							</select>
 							</div>
 							<div class="col-md-3">
-								<a  ng-click="getDetail()"class="btn btn-warning">เพิ่มรายละเอียดฝ่ายอัตโนมัติ</a>
+								<a href="{{url('newdept')}}" class="btn btn-success">เพิ่มฝ่ายใหม่</a>
 							</div>
 						</div>
 						<div class="form-group">
@@ -123,6 +123,9 @@ class="active"
 		                      	class="form-control" rows="3" required></textarea>
 		                      	<div class="alert alert-danger" role="alert" ng-show="showWarning"> @{{text}}</div>
 		                    </div>
+		                    <div class="col-md-3">
+								<a  ng-click="getDetail()"class="btn btn-warning">เพิ่มรายละเอียดฝ่ายอัตโนมัติ</a>
+							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-4 control-label">จำนวนรับต่ำสุด:</label>

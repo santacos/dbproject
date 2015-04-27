@@ -25,6 +25,11 @@ Route::get('youractivity', 'ActivityController@yourActivity');
 Route::resource('activity','ActivityController', ['only'=> ['index','create','store','show','edit']]);
 
 Route::get('dept','DepartmentController@sendDepartment');
+
+Route::get('newdept', 'AddDepartmentController@create');
+
+Route::post('newdept', 'AddDepartmentController@store');
+
 Route::resource('adddepart','DepartmentController',['only'=> ['index','create','store','show','edit']]);
 
 Route::controller('recruitment','RecruitmentController');
