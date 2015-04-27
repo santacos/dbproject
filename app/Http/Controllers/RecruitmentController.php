@@ -135,6 +135,10 @@ class RecruitmentController extends Controller {
 		$registration->rec_id = $application->rec_id;
 		$registration->save();
 
+		//update current num
+		$application->recruitment->current_num = DB::table('registration')->where('rec_id',$rec_id)->count();
+		$application->recruitment->save();
+
 		return redirect('recruitment/addmember?id='.$rec_id);
 	}
 

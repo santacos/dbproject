@@ -99,6 +99,17 @@ class ActivityController extends Controller {
 		$status =[];
 		$activity = \App\Activity::with('affiliation','user')->where('act_id','=',$id)->first();
 		$recDBs = \App\Recruitment::with('activity','department','application')->where('act_id',$id)->get();
+		
+		
+		foreach ($recDBs as $recDB) {
+			//update current num
+			$try= DB::table('registration')->where('rec_id',$recDB->rec_id)->selectRaw('user_id')->groupBy('user_id')->distinct()->get();
+			$recDB->current_num = count($try);
+			$recDB->save();
+		}
+
+
+
 		if(Auth::check()){
 			$user = Auth::user();
 			$realuser = \App\User::with('application')->where('id',$user->id)->first();
