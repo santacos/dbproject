@@ -5,16 +5,13 @@ class="active"
 @endsection
 
 @section('libs')
-	 
 
-
-	<script src="{{asset('js/createdep.js')}}"></script>
 
 	
 @endsection
 
 @section('content')
-<div class="container" ng-app="inputExample" ng-controller="ExampleController">
+<div class="container" >
 	<div class="row" ng-init="act_id={{$activity->act_id}}">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-success">

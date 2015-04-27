@@ -4,7 +4,7 @@ angular.module('inExample', ['ngRoute'])
      	$scope.ownApp =40;
      	$scope.join = 1;
 
-		$http.get('./recruitment/parameter').
+		$http.get('../recruitment/parameter').
 		 	success(function(data, status, headers, config) {
 				//$scope.departments = data;	
 				$scope.ownApp = data.ownApp;
