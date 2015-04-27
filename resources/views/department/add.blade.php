@@ -1,13 +1,14 @@
 @extends('app')
 
 @section('libs')
-	
-
+	 
 	<script src="{{ asset('vendor/angular.min.js')}}"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 
 	<script src="{{asset('js/createdep.js')}}"></script>
+
+	
 @endsection
 
 @section('content')
@@ -155,3 +156,4 @@
 	</div>
 </div>
 @endsection
+

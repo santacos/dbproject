@@ -24,6 +24,8 @@ class ActivityController extends Controller {
 		
 		$activities = \App\Activity::has('affiliation')->get();
 		$message = Session::get('message');
+		
+		
 
 		return view('activity.index',compact('activities','message'));
 	}
@@ -93,9 +95,40 @@ class ActivityController extends Controller {
 	 */
 	public function show($id)
 	{
-		$activity = \App\Activity::has('affiliation')->where('act_id','=',$id)->first();
-		$recDBs = \App\Recruitment::with('activity','department')->where('act_id',$id)->get();
-		return view('activity.show',compact('activity','recDBs'));
+		$action = 2;
+		$status =[];
+		$activity = \App\Activity::with('affiliation','user')->where('act_id','=',$id)->first();
+		$recDBs = \App\Recruitment::with('activity','department','application')->where('act_id',$id)->get();
+		if(Auth::check()){
+			$user = Auth::user();
+			$realuser = \App\User::with('application')->where('id',$user->id)->first();
+			$owners = $activity->user;
+			foreach ($owners as $owner) {
+				if($user->id==$owner->id)$action=1;
+			}
+			if($action!=1){
+				$i=0;
+				foreach($recDBs as $recDB){
+					//$fkU = $user->application->where('rec_id',$recDB->rec_id);
+					if( $realuser->application->where('rec_id',$recDB->rec_id)->count()==0){
+						//$status[$i] = 3;
+						$status = array_add($status,$i,3);
+					}else{
+						$cat= $realuser->application->where('rec_id',$recDB->rec_id)->status();
+						$status = array_add($status,$i,$cat);
+					}
+					$i++;
+				}
+			}
+
+
+		}else{
+			$action=5;
+
+		}
+		
+		return view('activity.show',compact('activity','recDBs','action','status'));
+
 	}
 
 	/**
