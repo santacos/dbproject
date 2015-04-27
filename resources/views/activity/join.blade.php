@@ -17,7 +17,7 @@ class="active"
 					</div>
 				</div>
 					<div class="box">
-						@if(count($activities) > 0)
+						@if(count($deps) > 0)
 						<div class="box-body table-responsive no-padding">
 							<table class="table table-bordered table-hover">
 								<thead>
@@ -25,31 +25,32 @@ class="active"
 										<th>#</th>
 										<th>Name</th>
 										<th>Detail</th>
+										<th>Department</th>
 										<th>Start Date</th>
 										<th>End Date</th>
 										<th>Affiliation</th>
-										<th>Create by</th>
+										<!-- <th>Create by</th> -->
 										<td>Action</td>
 									</tr>
 								</thead>
 								<?php $i=0 ?>
 								<tbody>
-									@foreach($activities as $activity)
+									@foreach($deps as $dep)
 									<tr>
 										<th scope="row">{{++$i}}</th>
-										<td>{{$activity->name}}</td>
-										<td>{{$activity->detail}}</td>
-										<td>{{$activity->start_date}}</td>
-										<td>{{$activity->end_date}}</td>
-										<td>{{$activity->affiliation->name}}</td>
-										<td>
-											@foreach($activity->user as $man)
+										<td>{{$dep->activity->name}}</td>
+										<td>{{$dep->activity->detail}}</td>
+										<td>{{$dep->department->name}}</td>
+										<td>{{$dep->activity->start_date}}</td>
+										<td>{{$dep->activity->end_date}}</td>
+										<td>{{$dep->activity->affiliation->name}}</td>
+									<!-- 	<td>
+											@foreach($dep->activity->user as $man)
 											{{$man->username}} <br>{{$man->email}}
 											@endforeach
-										</td>
+										</td> -->
 										<td>
-											<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">ดูรายละเอียด</a>
-											<a href="{{url('adddepart/create?id='.$activity->act_id)}}" class="btn btn-info">จัดการ</a>
+											<a href="{{url('activity/'.$dep->activity->act_id)}}" class="btn btn-info">ดูรายละเอียด</a>
 										</td>
 									</tr>
 									@endforeach
@@ -62,6 +63,7 @@ class="active"
 							</div>
 							@endif
 						</div>
+
 					</div><!-- /.box-body -->
 				</div><!-- /.box -->
 			</div>
