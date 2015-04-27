@@ -43,7 +43,21 @@ class UserController extends Controller {
 
 	public function getProfile($id) {
 		$user = \App\User::find($id);
-		return view('user.profile', compact('user'));
+		$student = \App\Student::find($id);
+
+		//find activity
+		$regs = \App\Registration::with('recruitment')->where('user_id',$user->id)->groupBy('rec_id')->distinct()->get();
+		$deps = [];
+		$i=0;
+		foreach ($regs as $reg) {
+			$dep = \App\Recruitment::with('activity','department')->where('rec_id',$reg->recruitment->rec_id)->first();
+			//$act = \App\Activity::findOrFail($reg->recruitment->act_id);
+			$deps = array_add($deps,$i,$dep);
+			$i++;
+		}
+
+
+		return view('user.profile', compact('user','student','deps'));
 	}
 
 	public function getAlluser(){
