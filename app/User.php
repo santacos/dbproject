@@ -53,11 +53,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     public function application(){
-    	return $this->hasMany('App\Application','app_id');
+    	return $this->hasMany('App\Application','user_id','id');
     }
 
     public function registration(){
-    	return $this->hasMany('App\Registration','reg_id');
+    	return $this->hasMany('App\Registration','user_id','id');
     }
 
 }

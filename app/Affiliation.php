@@ -17,7 +17,7 @@ class Affiliation extends Model {
 
 	public function activitys()
     {
-        return $this->hasMany('App\Activitys','act_id');
+        return $this->hasMany('App\Activitys','aff_id');
     }
 
     public function users()

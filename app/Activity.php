@@ -23,7 +23,7 @@ class Activity extends Model {
     }
 
     public function recruitments(){
-    	return $this->hasMany('App\Recruitment','rec_id');
+    	return $this->hasMany('App\Recruitment','act_id');
     }
 
 

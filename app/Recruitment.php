@@ -19,11 +19,11 @@ class Recruitment extends Model {
     }
 
     public function application(){
-        return $this->hasMany('App\Application','app_id');
+        return $this->hasMany('App\Application','rec_id');
     }
 
     public function registration(){
-        return $this->hasMany('App\Registration','reg_id');
+        return $this->hasMany('App\Registration','rec_id');
     }
 
 
