@@ -12,7 +12,7 @@
 						<h1>  Your Activities <small>รายการกิจกรรมทั้งหมดที่ได้เข้าร่วม</small></h1>
 					</div>
 					<div class="col-xs-3">
-						<a href="{{url('/activity/create')}}" class="btn btn-info" style="position:relative; bottom:-2em;">Create new activity</a>
+						<a href="{{url('/activity/create')}}" class="btn btn-primary btn-lg" style="position:relative; bottom:-1em;">สร้างกิจกรรมใหม่</a>
 					</div>
 				</div>
 				<div class="col-md-10 col-md-offset-1">
