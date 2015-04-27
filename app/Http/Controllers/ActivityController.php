@@ -114,11 +114,14 @@ class ActivityController extends Controller {
 						//$status[$i] = 3;
 						$status = array_add($status,$i,3);
 					}else{
-						$cat= $realuser->application->where('rec_id',$recDB->rec_id)->status();
+						$cat= $realuser->application->where('rec_id',$recDB->rec_id)->first()->status;
 						$status = array_add($status,$i,$cat);
+
 					}
 					$i++;
 				}
+				//return count($recDBs);
+				//return $status;
 			}
 
 

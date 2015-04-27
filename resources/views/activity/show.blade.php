@@ -58,8 +58,8 @@ class="active"
 			    			<th></th>
 			    		</thead>
 			    		<tbody>
-			    			@foreach($recDBs as $recDB)
 			    			<?php $i=0; ?>
+			    			@foreach($recDBs as $recDB)
 			    			<tr>
 			    				<td>{{$recDB->department->name}}</td>
 			    				<td style="width:30%;">{{$recDB->edited_dep_detail}}</td>
@@ -79,6 +79,7 @@ class="active"
 			    					@endif
 			    				</td>
 							</tr>
+							<?php $i++; ?>
 			    			@endforeach
 			    		</tbody>
 			    	</table>
