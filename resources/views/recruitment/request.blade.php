@@ -22,8 +22,25 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						
-						<h3>To : {{$recruitment}}</h3>
-						<br><h3>BY:{{Auth::user()->id}}</h3>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+			              <div class="info-box">
+			                <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+			                <div class="info-box-content">
+			                  <span class="info-box-text">To : </span>
+			                  <span class="info-box-number"><b>กิจกรรม </b> {{$recruitment->activity->name}} <br><b>ฝ่าย </b> {{$recruitment->department->name}}</span>
+			                </div><!-- /.info-box-content -->
+			              </div><!-- /.info-box -->
+			            </div>
+
+			            <div class="col-md-6 col-sm-6 col-xs-12">
+			              <div class="info-box">
+			                <span class="info-box-icon bg-yellow"><i class="fa fa-comments-o"></i></span>
+			                <div class="info-box-content">
+			                  <span class="info-box-text">BY:</span>
+			                  <span class="info-box-number">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</span>
+			                </div><!-- /.info-box-content -->
+			              </div><!-- /.info-box -->
+			            </div>
 
 						<div class="form-group">
 
@@ -35,7 +52,7 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
+								<button type="submit" class="btn btn-info btn-lg" style="width:100%;">
 									Send
 								</button>
 							</div>
