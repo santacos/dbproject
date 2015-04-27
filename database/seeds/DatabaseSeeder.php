@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('UserTableSeeder');
         $this->call('DepartmentTableSeeder');
         $this->call('StudentTableSeeder');
+        $this->call('ActivityTableSeeder');
+
 	}
 
 }
@@ -864,4 +866,852 @@ class StudentTableSeeder extends Seeder {
     }
 
 
+}
+
+class ActivityTableSeeder extends Seeder {
+    public function run(){
+  $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่1';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(1);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(1);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่2';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(2);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(2);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่3';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(3);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(3);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่4';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(4);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(4);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่5';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(5);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(5);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่6';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(6);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(6);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่7';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(7);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(7);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่8';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(8);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(8);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่9';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(9);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(9);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่10';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(10);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(10);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่11';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(11);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(11);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่12';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(12);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(12);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่13';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(1);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(13);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่14';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(2);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(14);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่15';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(3);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(15);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่16';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(4);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(16);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่17';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(5);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(17);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่18';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(6);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(18);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่19';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(7);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(19);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่20';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(8);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(20);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่21';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(9);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(21);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่22';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(10);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(22);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่23';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(11);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(23);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่24';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(12);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(24);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่25';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(1);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(25);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่26';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(2);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(26);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่27';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(3);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(27);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่28';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(4);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(28);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่29';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(5);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(29);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่30';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(6);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(30);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่31';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(7);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(31);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่32';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(8);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(32);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่33';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(9);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(33);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่34';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(10);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(34);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่35';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(11);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(35);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่36';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(12);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(36);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่37';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(1);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(37);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่38';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(2);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(38);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่39';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(3);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(39);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่40';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(4);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(40);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่41';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(5);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(41);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่42';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(6);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(42);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่43';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(7);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(43);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่44';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(8);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(44);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่45';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(9);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(45);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่46';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(10);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(46);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่47';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(11);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(47);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่48';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(12);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(48);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่49';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(1);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(49);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่50';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(2);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(1);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่51';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(3);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(2);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่52';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(4);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(3);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่53';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(5);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(4);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่54';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(6);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(5);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่55';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(7);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(6);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่56';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(8);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(7);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่57';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(9);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(8);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่58';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(10);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(9);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่59';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(11);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(10);
+
+ $user->activity()->attach($activity->act_id);
+
+ $activity = new \App\Activity;
+ $activity->name = ' กิจกรรมช่วยน้องหมารักโลก ครั้งที่60';
+ $activity->detail = 'มาช่วยหมา ปลูกป่า ดำน้ำ';
+ $activity->start_date = date('2015-04-29');
+ $activity->end_date = date('2015-05-2');
+ $aff = \App\Affiliation::find(12);
+ $activity->affiliation()->associate($aff); 
+ $activity->status = 0;
+ $activity->save();
+
+$user=\App\User::find(11);
+
+ $user->activity()->attach($activity->act_id);
+
+
+
+
+    }
 }

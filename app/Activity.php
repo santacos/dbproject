@@ -13,6 +13,8 @@ class Activity extends Model {
 	protected $table = 'activities';
 	protected $primaryKey = 'act_id';
 
+	protected $fillable = ['name', 'detail', 'start_date','end_date','aff_id','status'];
+
 	public function affiliation()
     {
         return $this->belongsTo('App\Affiliation','aff_id');

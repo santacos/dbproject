@@ -19,9 +19,9 @@ class UserController extends Controller {
 		}
 		
 		$user = Auth::user();
-		$applications = \App\Application::with('recruitment.activity','recruitment.department')->where('user_id',$user->id)->where('status',2);
+		$applications = \App\Application::with('recruitment.activity','recruitment.department')->where('user_id',$user->id);
 
-		$aa = $applications->where('sender_flag',true)->get();
+		$aa = $applications->where('sender_flag',true)->where('status',2)->get();
 		$requestapps =$applications->where('sender_flag',false)->get();
 		// return $requestapps;
 		// return $inviteapps;

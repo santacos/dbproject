@@ -10,7 +10,7 @@
 
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">คำร้องขอ\คำเชิญ</h3>
+					<h3 class="box-title">คำร้องขอเข้าร่วมกิจกรรมของคุณ</h3>
 					
 					<div class="box-tools">
 						<div class="input-group">
