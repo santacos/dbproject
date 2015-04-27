@@ -23,7 +23,7 @@
       <!-- Left side column. contains the logo and sidebar -->
       @include('include.sidebar')
       
-      <div class="content-wrapper">
+      <div class="content-wrapper" style="padding: 40px 0;">
         @yield('content')
       </div><!-- /.content-wrapper -->
      

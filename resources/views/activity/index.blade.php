@@ -15,7 +15,7 @@ class="active"
 		<div class="col-md-10 col-md-offset-1">
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">Responsive Hover Table</h3>
+					<h3 class="box-title">ตารางรายชื่อกิจกรรม</h3>
 					
 					<div class="box-tools">
 						<div class="input-group">
