@@ -22,4 +22,18 @@ class UserController extends Controller {
 		$users = \App\User::all();
 		return view('user.all',compact('users'));
 	}
+
+	public function getEdit($id){
+		if(Auth::check()){
+			$user = Auth::user();
+			if($user->id==$id){
+				return view('user.edit',compact('user'));
+			}else{
+				return redirect('activity');
+			}
+
+		}
+		
+
+	}
 }
