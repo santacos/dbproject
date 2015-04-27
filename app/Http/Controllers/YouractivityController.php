@@ -37,6 +37,11 @@ class YouractivityController extends Controller {
 		
 	}
 
+	public function postSearch(Request $request){
+		return 'hey';
+
+	}
+
 
 
 }

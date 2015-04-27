@@ -8,7 +8,7 @@
 				คำร้องขอ\คำเชิญ
 			</h1>
 
-			<div class="box">
+			<div class="box  box-default box-solid">
 				<div class="box-header">
 					<h3 class="box-title">คำร้องขอเข้าร่วมกิจกรรมของคุณ</h3>
 					
@@ -56,14 +56,17 @@
 						</tbody>
 					</table>
 				</div><!-- /.box-body -->
-				<div class="box box-success box-solid">
+			</div>
+				
+			<div class="box">
+				<div class="box box-default box-solid">
 	                <div class="box-header with-border">
 	                  <h3 class="box-title">คำเชิญจากกิจกรรม</h3>
 	                  <div class="box-tools pull-right">
 	                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
 	                  </div><!-- /.box-tools -->
 	                </div><!-- /.box-header -->
-	                <div class="box-body">
+	                <div class="box-body table-responsive no-padding">
 	                	<table class="table table-bordered table-hover">
 							<thead>
 								<tr>

@@ -1,4 +1,4 @@
-<aside class="main-sidebar">
+<aside class="main-sidebar" ng-app="inExample" ng-controller="ExController" >
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar" style="height: auto;">
           <!-- Sidebar user panel -->
@@ -25,19 +25,19 @@
             <li @yield('active_2')>
               <a href="{{ url('/youractivity') }}">
                 <i class="fa fa-sitemap"></i> <span>กิจกรรมของคุณ</span>
-                <small class="label pull-right bg-red">3</small>
+                <small class="label pull-right bg-red">@{{ownApp}}</small>
               </a>
             </li>
             <li @yield('active_3')>
               <a href="{{url('/joinactivity')}}">
                 <i class="fa fa-users"></i> <span>กิจกรรมที่คุณเข้าร่วม</span>
-                <small class="label pull-right label-primary">3</small>
+                <small class="label pull-right label-primary">@{{join}}</small>
               </a>
             </li>
             <li @yield('active_4')>
               <a href="{{url('user/allapp')}}">
                 <i class="fa fa-reply"></i> <span>คำร้องขอ/คำเชิญ</span>
-                <small class="label pull-right bg-green">3</small>
+                <small class="label pull-right bg-green">@{{request}}</small>
               </a>
             </li>
             <li @yield('active_5')>
