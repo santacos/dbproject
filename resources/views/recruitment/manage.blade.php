@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+				<div class="panel-heading">Department Management</div>
 				<div class="panel-body">
 					<h3>รายชื่อผู้ที่อยู่ในฝ่าย</h3>
 					<table class="table table-bordered table-hover">
@@ -40,7 +40,7 @@
 				    </table>
 				    <hr>
 
-					<h3>คำร้องที่ต้องตอบรับ</h3>
+					<h3>ตอบรับคำร้องขอเข้าร่วมฝ่าย</h3>
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
@@ -77,7 +77,7 @@
 				    </table>
 				    <hr>
 
-				    <h3>ติดตามคำเชิญที่ส่งไป</h3>
+				    <h3>ผลการตอบรับคำเชิญที่ส่งไป</h3>
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
@@ -111,7 +111,7 @@
 
 
 
-					<h3>กดเชิญคนเพิ่ม</h3>
+					<h3>เชิญคนเข้าร่วมกิจกรรม</h3>
 					<table class="table table-bordered table-hover">
 					    <thead>
 					        <tr>
@@ -141,8 +141,6 @@
 					    </tbody>
 				    </table>
 				    <hr>
-
-					<h3>current user id:</h3> {{$cur_user->id}}
    				</div>
 			</div>
 		</div>

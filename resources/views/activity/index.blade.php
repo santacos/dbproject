@@ -6,38 +6,46 @@ class="active"
 @section('content')
 
 <section class="content">
-<h1>
-	All activities
-	<small>รายการกิจกรรมทั้งหมดที่สามารถเข้าร่วมได้</small>
-</h1>
+	<h1>
+		All activities
+		<small>รายการกิจกรรมทั้งหมดที่สามารถเข้าร่วมได้</small>
+	</h1>
 
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<div class="box">
-				<div class="box-header">
-					<h3 class="box-title">Responsive Hover Table</h3>
-					
-					<div class="box-tools">
-						<div class="input-group">
-							<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-							<div class="input-group-btn">
-					
-								<button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-							</div>
-						</div>
+			
+
+			<div class="input-group">
+				<div class="col-md-2">
+					<select class="form-control">
+						<option>ทุกฝ่าย</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<input type="text" name="table_search" class="form-control" placeholder="ชื่อกิจกรรมที่ต้องการค้นหา">
+
+				</div>
+				<div class="col-md-2">
+					<div class="input-group-btn">
+
+						<button class="btn btn-default"><i class="fa fa-search"></i></button>
 					</div>
-				</div><!-- /.box-header -->
+				</div>
+				
+			</div>
+			<br>
+			<div class="box">
 				<div class="box-body table-responsive no-padding">
 					<table class="table table-bordered table-hover">
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Name</th>
-								<th>Detail</th>
-								<th>Start Date</th>
-								<th>End Date</th>
-								<th>Affiliation</th>
-								<th>Create by</th>
+								<th>ชื่อกิจกรรม</th>
+								<th>รายละเอียด</th>
+								<th>วันเริ่มทำกิจกรรม</th>
+								<th>วันสิ้นสุดทำกิจกรรม</th>
+								<th>สังกัด</th>
+								<th>สร้างโดย</th>
 								<td>Action</td>
 							</tr>
 						</thead>
