@@ -1,4 +1,4 @@
-<aside class="main-sidebar" ng-app="inExample" ng-controller="ExController" >
+<aside class="main-sidebar"  >
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar" style="height: auto;">
           <!-- Sidebar user panel -->

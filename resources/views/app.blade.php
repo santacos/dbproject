@@ -15,7 +15,7 @@
   </head>
 
             <!-- Content Wrapper. Contains page content -->
-  <body class="skin-blue sidebar-mini">
+  <body class="skin-blue sidebar-mini" ng-app="inputExample" ng-controller="ExampleController">
     
     <div class="wrapper">
       
