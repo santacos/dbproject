@@ -132,7 +132,7 @@
 					          	<td>{{$user->nickname}}</td>
 					          	<td>{{$user->year}}</td>
 					      		<td>
-									<a href="#" class="btn btn-primary">view profile</a>
+									<a href="{{ url('/user/profile/'.$user->id) }}" class="btn btn-primary">view profile</a>
 				      			
 									<a href="{{ url('/recruitment/invite?id='.$rec_id.'&&mid='.$user->id) }}" class="btn btn-warning">invite</a>
 				      			</td>
