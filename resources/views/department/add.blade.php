@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('active_2')
+class="active"
+@endsection
+
 @section('libs')
 	 
 	<script src="{{ asset('vendor/angular.min.js')}}"></script>

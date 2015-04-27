@@ -1,21 +1,24 @@
 @extends('app')
 
-@section('content')
+@section('active_2')
+class="active"
+@endsection
 
+@section('content')
 
 <div class="container">
 	<section class="contest">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
 					<div class="col-xs-9">
-						<h1>  Your Activities <small>รายการกิจกรรมทั้งหมดที่ได้เข้าร่วม</small></h1>
+						<h1 style="margin: 0; padding-bottom: 30px;">  Your Activities <small>รายการกิจกรรมทั้งหมดที่ได้เข้าร่วม</small></h1>
 					</div>
 					<div class="col-xs-3">
-						<a href="{{url('/activity/create')}}" class="btn btn-primary btn-lg" style="position:relative; bottom:-1em;">สร้างกิจกรรมใหม่</a>
+						<a href="{{url('/activity/create')}}" class="btn btn-primary btn-lg" style="position:relative;">สร้างกิจกรรมใหม่</a>
 					</div>
 				</div>
-				<div class="col-md-10 col-md-offset-1">
 					<div class="box">
 						@if(count($activities) > 0)
 						<div class="box-body table-responsive no-padding">

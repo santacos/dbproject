@@ -23,29 +23,24 @@
               </a>
             </li>
             <li @yield('active_2')>
-              <a href="#">
-                <i class="fa fa-search"></i> <span>ค้นหาผู้ร่วมกิจกรรม</span>
-              </a>
-            </li>
-            <li @yield('active_3')>
               <a href="{{ url('/youractivity') }}">
                 <i class="fa fa-sitemap"></i> <span>กิจกรรมของคุณ</span>
                 <small class="label pull-right bg-red">3</small>
               </a>
             </li>
-            <li @yield('active_4')>
+            <li @yield('active_3')>
               <a href="#">
                 <i class="fa fa-users"></i> <span>กิจกรรมที่คุณเข้าร่วม</span>
                 <small class="label pull-right label-primary">3</small>
               </a>
             </li>
-            <li @yield('active_5')>
+            <li @yield('active_4')>
               <a href="#">
                 <i class="fa fa-reply"></i> <span>คำร้องขอ/คำเชิญ</span>
                 <small class="label pull-right bg-green">3</small>
               </a>
             </li>
-            <li @yield('active_6')>
+            <li @yield('active_5')>
               <a href="#">
                 <i class="fa fa-cog"></i> <span>แก้ไขข้อมูลส่วนตัว</span>
               </a>

@@ -1,11 +1,15 @@
 @extends('app')
 
+@section('active_1')
+class="active"
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+				<div class="panel-heading">Activity Detail</div>
 
 				<div class="panel-body">
 					<h3>รายละเอียดกิจกรรม : {{$activity->name}}</h3>
@@ -13,27 +17,27 @@
 					<table class="table table-bordered table-hover">
 					    <tbody>
 					        <tr>
-					        	<th>Name</th>
+					        	<th>ชื่อกิจกรรม</th>
 					          	<td>{{$activity->name}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Detail</th>
+					        	<th>รายละเอียดกิจกรรม</th>
 					           	<td>{{$activity->detail}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Start Date</th>
+					        	<th>วันเริ่มต้นกิจกรรม</th>
 					          	<td>{{$activity->start_date}}</td>
 					        </tr>
 					        <tr>
-					        	<th>End Date</th>
+					        	<th>วันสิ้นสุดกิจกรรม</th>
 					          	<td>{{$activity->end_date}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Affiliation</th>
+					        	<th>สังกัด</th>
 					          	<td>{{$activity->affiliation->name}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Create by</th>
+					        	<th>ผู้สร้าง</th>
 					          	<td>
 					          		@foreach($activity->user as $man)
 					          		{{$man->username}} <br>
@@ -46,12 +50,12 @@
 					<h3>รายละเอียดฝ่ายในกิจกรรม</h3>	
 			    	<table class="table table-stribed table-hover">
 			    		<thead>
-			    			<th>Name</th>
-			    			<th>Detail</th>
-			    			<th>Current num</th>
-			    			<th>Min num</th>
-			    			<th>Max num</th>
-			    			<th>Action</th>
+			    			<th>ชื่อฝ่าย</th>
+			    			<th>รายละเอียดฝ่าย</th>
+			    			<th>จำนวนผู้เข้าร่วมปัจจุบัน</th>
+			    			<th>จำนวนรับต่ำสุด</th>
+			    			<th>จำนวนรับสูงสุด</th>
+			    			<th></th>
 			    		</thead>
 			    		<tbody>
 			    			<?php $i=0; ?>
