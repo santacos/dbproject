@@ -1,2 +1,0 @@
-find the number of an activity's attendants in each department which are also activities owner. The result leaves the name of all departments regard less the number of attendants
-
