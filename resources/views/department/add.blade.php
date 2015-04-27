@@ -13,56 +13,43 @@
 
 @section('content')
 <div class="container" ng-app="inputExample" ng-controller="ExampleController">
-	count :: @{{count}} <br>
-	depSelected : @{{depSelected.dep_id}} <br>
-	@{{departments}}
 	<div class="row" ng-init="act_id={{$activity->act_id}}">
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-success">
-				<div class="panel-heading">Add department</div>
+				<div class="panel-heading">Activity Management</div>
 				<div class="panel-body">
-					<a href="{{url('/activity/'.$activity->act_id.'/edit')}}" class="btn btn-info" style="margin-bottom:1em;">Edit this activity</a>
-					<a href="{{url('/activity')}}" class="btn btn-success" style="margin-bottom:1em;">All activity</a>
-					<a href="{{url('/youractivity')}}" class="btn btn-warning" style="margin-bottom:1em;">your activity</a>
-					
 					<h3>รายละเอียดกิจกรรม : {{$activity->name}}</h3>
 					<hr>
 					<table class="table table-bordered table-hover">
 					    <tbody>
 					        <tr>
-					        	<th>Name</th>
+					        	<th>ชื่อกิจกรรม</th>
 					          	<td>{{$activity->name}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Detail</th>
+					        	<th>รายละเอียดกิจกรรม</th>
 					           	<td>{{$activity->detail}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Start Date</th>
+					        	<th>วันเริ่มต้นกิจกรรม</th>
 					          	<td>{{$activity->start_date}}</td>
 					        </tr>
 					        <tr>
-					        	<th>End Date</th>
+					        	<th>วันสิ้นสุดกิจกรรม</th>
 					          	<td>{{$activity->end_date}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Affiliation</th>
+					        	<th>สังกัด</th>
 					          	<td>{{$activity->affiliation->name}}</td>
 					        </tr>
 					        <tr>
-					        	<th>Create by</th>
+					        	<th>ผู้สร้าง</th>
 					          	<td>
 					          		@foreach($activity->user as $man)
 					          		{{$man->username}} <br>
 					          		@endforeach
 					      		</td>
 					      	</tr>
-					      	<tr>
-					      		<th>Action</th>
-					      		<td>
-					      			<a href="{{url('activity/'.$activity->act_id)}}" class="btn btn-info">view</a>
-					      		</td>
-					        </tr>
 					    </tbody>
 				    </table>
 
@@ -70,11 +57,11 @@
 				    	<h3>รายละเอียดฝ่ายในกิจกรรม</h3>	
 				    	<table class="table table-stribed table-hover">
 				    		<thead>
-				    			<th>Name</th>
-				    			<th>Detail</th>
-				    			<th>Min num</th>
-				    			<th>Max num</th>
-				    			<th>Action</th>
+				    			<th>ชื่อฝ่าย</th>
+				    			<th>รายละเอียดฝ่าย</th>
+				    			<th>จำนวนรับต่ำสุด</th>
+				    			<th>จำนวนรับสูงสุด</th>
+				    			<th>จัดการ</th>
 				    		</thead>
 				    		<tbody>
 				    			@foreach($recDBs as $recDB)
@@ -113,20 +100,20 @@
 
 						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Department:</label>
+							<label class="col-md-4 control-label">ฝ่าย:</label>
 							<div class="col-md-5">
 								<select name="department[@{{count}}][dep_id]" class="form-control" 
 								ng-options="depOption.name for depOption in depOptions" ng-model="depSelected"
 								ng-change="detailSelected=null">
-								  <option value="">-- choose department --</option>
+								  <option value="">-- เลือกฝ่าย --</option>
     							</select>
 							</div>
 							<div class="col-md-3">
-								<a  ng-click="getDetail()"class="btn btn-warning">Get default detail</a>
+								<a  ng-click="getDetail()"class="btn btn-warning">เพิ่มรายละเอียดฝ่ายอัตโนมัติ</a>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Detail:</label>
+							<label class="col-md-4 control-label">รายละเอียดฝ่าย:</label>
 							<div class="col-md-5">
 		                      	<textarea name="department[@{{count}}][detail]" ng-model="detailSelected"
 		                      	class="form-control" rows="3" required></textarea>
@@ -134,11 +121,11 @@
 		                    </div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-4 control-label">Min_num:</label>
+							<label class="col-md-4 control-label">จำนวนรับต่ำสุด:</label>
 							<div class="col-md-2">
 								<input type="number" class="form-control" name="min_num" min="1" ng-model="min_num">
 		                    </div>
-		                    <label class="col-md-1 control-label">Max_num:</label>
+		                    <label class="col-md-1 control-label">สูงสุด:</label>
 							<div class="col-md-2">
 								<input type="number" class="form-control" name="max_num" min="1" ng-model="max_num">
 		                    </div>
