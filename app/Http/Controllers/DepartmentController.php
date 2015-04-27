@@ -45,9 +45,34 @@ class DepartmentController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		//
+		/*
+		$this->validate($request, [
+        'name' => 'required|max:100',
+        'detail' => 'required|max:1000',
+        'start_date' => 'required',
+        'end_date' => 'required',
+        'aff_id' => 'required',
+    	]);*/
+		$t = "eiei";
+		return $t;
+		$department = new \App\Department;
+		$department->name = $request->name;
+		$department->default_detail = $request->default_detail;
+		
+		$department->save();
+
+		// Session::flash('message', 'Successfully updated!');
+		// return redirect('activity');
+
+		return redirect()->back();
+		/*
 		$input = $request->input();
-		return $input;
+		return $input;*/
+	}
+
+	public function createNewDepartment() {
+		
+		return view('department.addNewDep');
 	}
 
 	/**
