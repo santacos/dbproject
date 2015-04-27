@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('active_2')
+@section('active_3')
 class="active"
 @endsection
 
@@ -58,8 +58,8 @@ class="active"
 							</table>
 							@else
 							<div class="callout callout-danger">
-								<h4>You don't have any activity.</h4>
-								<p>Click on create new activity to create one.</p>
+								<h4>คุณยังไม่ได้เข้าร่วมกิจกรรมใดๆ</h4>
+								<p>คุณสามารถส่งคำร้องขอเข้าร่วมกิจกรรมในหน้ากิจกรรมทั้งหมดได้</p>
 							</div>
 							@endif
 						</div>

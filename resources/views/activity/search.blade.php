@@ -9,8 +9,8 @@ class="active"
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<h1 style="margin: 0; padding-bottom: 30px;">
-				All activities
-				<small>รายการกิจกรรมทั้งหมดที่สามารถเข้าร่วมได้</small>
+				Search ค้นหาคำว่า :
+				<small>{{$word}}</small>
 			</h1>
 			<div class="box">
 				<div class="box-header">
@@ -18,15 +18,11 @@ class="active"
 					
 					<div class="box-tools">
 						<div class="input-group">
-							<form role="form" method="POST" action="{{ url('/joinactivity/search') }}">
-								<input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
-								<button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
+							<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
 							<div class="input-group-btn">
 					
-								
+								<button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
 							</div>
-							</form>
 						</div>
 					</div>
 				</div><!-- /.box-header -->

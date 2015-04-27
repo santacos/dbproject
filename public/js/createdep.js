@@ -112,13 +112,14 @@ angular.module('inputExample', ['ngRoute'])
 			for(var i=0;i<$scope.size;i++){
 				$scope.array.push({'dep_id':$scope.departments[i].dep_id,'detail':$scope.departments[i].detail,'name':$scope.departments[i].name,'min_num':$scope.departments[i].min_num,'max_num':$scope.departments[i].max_num});
 			}
+			var sent = $scope.act_id;
 			$http.post('../recruitment/recruit', {'array':$scope.array,'size':$scope.size,'act_id':$scope.act_id}).
 			  success(function(data, status, headers, config) {
 			    // this callback will be called asynchronously
 			    // when the response is available
 			    console.log(data.msg);
-			    alert(data.msg);
-			    window.location.href = '../home';
+			    alert($scope.act_id);
+			    window.location.href = '../activity/'+send;
 			  }).
 			  error(function(data, status, headers, config) {
 			    // called asynchronously if an error occurs

@@ -175,4 +175,22 @@ class RecruitmentController extends Controller {
 		return redirect('/activity/'.$act_id); 
 
 	}
+
+	public function getParameter(){
+		if(Auth::check()){
+			$user = Auth::user();
+			//$ownApp = \App\Activity::with('user')->where('user_id',$user->id)->count();
+			$ownApp = count($user->activity);
+			//return $ownApp;
+			$join = $user->registration;
+			$join = count($join);
+			$request = $user->application;
+			$request = count($request);
+			//return $join;
+			return Response::json(array('ownApp'=>$ownApp,'join'=>$join,'request'=>$request));
+		}else{
+
+		}
+		return Response::json(array('ownApp'=>4,'join'=>4,'request'=>1));
+	}
 }
