@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('active_2')
+@section('active_3')
 class="active"
 @endsection
 

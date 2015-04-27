@@ -35,13 +35,13 @@
               </a>
             </li>
             <li @yield('active_4')>
-              <a href="#">
+              <a href="{{url('user/allapp')}}">
                 <i class="fa fa-reply"></i> <span>คำร้องขอ/คำเชิญ</span>
                 <small class="label pull-right bg-green">3</small>
               </a>
             </li>
             <li @yield('active_5')>
-              <a href="#">
+              <a href="{{url('user/edit/'.Auth::user()->id)}}">
                 <i class="fa fa-cog"></i> <span>แก้ไขข้อมูลส่วนตัว</span>
               </a>
             </li>
