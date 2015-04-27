@@ -1,0 +1,18 @@
+SELECT name,COUNT(user_id) 
+FROM(
+SELECT aff_id,name,user_id FROM affiliations
+LEFT JOIN(
+SELECT user_id,aff_id AS a_id FROM affiliated
+NATURAL JOIN(
+	SELECT*FROM registration
+	NATURAL JOIN(
+		SELECT * FROM recruitment
+		NATURAL JOIN(
+			SELECT dep_id  FROM departments
+			WHERE name='ฝ่ายสถานที่'
+	    ) AS A
+	)AS B
+)AS C
+)AS D
+ON aff_id=a_id )AS F GROUP BY aff_id
+
