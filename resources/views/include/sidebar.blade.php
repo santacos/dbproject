@@ -29,7 +29,7 @@
               </a>
             </li>
             <li @yield('active_3')>
-              <a href="{{url('/joinactivitiy')}}">
+              <a href="{{url('/joinactivity')}}">
                 <i class="fa fa-users"></i> <span>กิจกรรมที่คุณเข้าร่วม</span>
                 <small class="label pull-right label-primary">3</small>
               </a>
