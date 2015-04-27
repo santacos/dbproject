@@ -67,17 +67,19 @@ class RecruitmentController extends Controller {
 				$i=$i+1;
 			}
 
+			$rec = \App\Recruitment::find($rec_id);
+			$percent = $rec->current_num/$rec->max_num*100;
+			$dept = \App\Department::find($rec->dep_id);
+			$activity = \App\Activity::find($rec->act_id);
 
-
-
-			$inapps = \App\Application::with('user','recruitment')->orderBy('updated_at', 'desc')->where('rec_id',$rec_id)->where('status',1)->get();
+			$inapps = \App\Registration::with('user','recruitment')->orderBy('created_at', 'desc')->get();
 			$sendapps = \App\Application::with('user','recruitment')->orderBy('created_at', 'desc')->where('rec_id',$rec_id)->where('sender_flag',true)->get();
 			$requestapps = \App\Application::with('user','recruitment')->orderBy('created_at', 'desc')->where('rec_id',$rec_id)->where('sender_flag',false)->where('status',2)->get();
 			
 			//not current user
 			$newusers = DB::table('users')->where('id','<>',$cur_user->id)->whereNotIn('id', $inmem)->get();
 			//return $inmem;
-			return view('recruitment.manage',compact('newusers','cur_user','rec_id','sendapps','requestapps','inapps'));
+			return view('recruitment.manage',compact('newusers','cur_user','rec_id','sendapps','requestapps','inapps','rec','percent','activity','dept'));
 			
 		}else{
 			return view('home');
