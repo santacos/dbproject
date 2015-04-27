@@ -10,8 +10,9 @@ angular.module('inputExample', ['ngRoute'])
        	$scope.ownApp =40;
      	$scope.join = 1;
      	$scope.request=2;
+     	$scope.root = 'http://localhost/laravel/public';
 
-		$http.get('../recruitment/parameter').
+		$http.get($scope.root+'/recruitment/parameter').
 		 	success(function(data, status, headers, config) {
 				//$scope.departments = data;	
 				$scope.ownApp = data.ownApp;
@@ -27,7 +28,7 @@ angular.module('inputExample', ['ngRoute'])
 
      	
 
-		$http.get('../recruitment/allrec?id='+$scope.act_id).
+		$http.get($scope.root+'/recruitment/allrec?id='+$scope.act_id).
 		 	success(function(data, status, headers, config) {
 				//$scope.departments = data;	
 				$scope.count = data.length;
