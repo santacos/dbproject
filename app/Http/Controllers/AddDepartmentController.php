@@ -23,7 +23,7 @@ class AddDepartmentController extends Controller {
 		$department->save();
 		*/
 		// Using SQL statement
-		$sql = 'INSERT INTO departments (name, default_detail) VALUES ('.$request->name.','.$request->default_detail.')';
+		$sql = 'INSERT INTO departments (name, default_detail) VALUES (\''.$request->name.'\',\''.$request->default_detail.'\')';
 		//return $sql;
 		DB::unprepared($sql);
 
