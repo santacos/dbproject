@@ -14,6 +14,7 @@
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
+              @if(Auth::check())
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +29,7 @@
                       <li><!-- start message -->
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Support Team
@@ -40,7 +41,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image">
+                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" class="img-circle" alt="user image">
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -52,7 +53,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image">
+                            <img src="{{asset('dist/img/user4-128x128.jpg')}}" class="img-circle" alt="user image">
                           </div>
                           <h4>
                             Developers
@@ -64,7 +65,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image">
+                            <img src="{{asset('dist/img/user3-128x128.jpg')}}" class="img-circle" alt="user image">
                           </div>
                           <h4>
                             Sales Department
@@ -76,7 +77,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="user image">
+                            <img src="{{asset('dist/img/user4-128x128.jpg')}}" class="img-circle" alt="user image">
                           </div>
                           <h4>
                             Reviewers
@@ -202,12 +203,24 @@
                   </li>
                 </ul>
               </li>
+              @endif
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
+                @if(Auth::check())
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Alexander The Great</span>
+                  <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
+                  <span class="hidden-xs">{{Auth::user()->firstname}} {{Auth::user()->lastname}}</span>
                 </a>
+                @else
+                <a href="{{url('auth/login')}}" class="dropdown-toggle">
+                  <span class="hidden-xs">Log in</span>
+                </a>
+                <li class="dropdown">
+                <a href="{{ url('/auth/register') }}" class="dropdown-toggle">
+                  <span class="hidden-xs">Register</span>
+                </a>
+                </li>
+                @endif
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">

@@ -1,6 +1,6 @@
-@extends('app')
+@extends('appguest')
 
-@section('content')
+@section('contentforguest')
 
 <body class="login-page">
 	

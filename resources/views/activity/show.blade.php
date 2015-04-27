@@ -57,7 +57,7 @@
 			    			<th>Current num</th>
 			    			<th>Min num</th>
 			    			<th>Max num</th>
-			    			<th>Action</th>
+			    			<!-- <th>Action</th> -->
 			    		</thead>
 			    		<tbody>
 			    			@foreach($recDBs as $recDB)
@@ -67,9 +67,9 @@
 			    				<td>{{$recDB->current_num}}</td>
 			    				<td>{{$recDB->min_num}}</td>
 			    				<td>{{$recDB->max_num}}</td>
-			    				<td> <a class="btn btn-success btn-sm">Edit</a>
+			    				<!-- <td> <a class="btn btn-success btn-sm">Edit</a>
 			    					<a href="{{url('recruitment/addmember?id='.$recDB->rec_id)}}" class="btn btn-warning btn-sm">manage</a>
-			    				</td>
+			    				</td> -->
 							</tr>
 			    			@endforeach
 			    		</tbody>
