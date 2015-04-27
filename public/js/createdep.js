@@ -118,7 +118,7 @@ angular.module('inputExample', ['ngRoute'])
 			    // when the response is available
 			    console.log(data.msg);
 			    alert(data.msg);
-			    window.location.href = '../home';
+			    window.location.href = '../activity/'.$scope.act_id;
 			  }).
 			  error(function(data, status, headers, config) {
 			    // called asynchronously if an error occurs
