@@ -6,13 +6,12 @@ class="active"
 @section('content')
 
 <section class="content">
-<h1>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h1 style="margin: 0; padding-bottom: 30px;">
 	All activities
 	<small>รายการกิจกรรมทั้งหมดที่สามารถเข้าร่วมได้</small>
 </h1>
-
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
 			<div class="box">
 				<div class="box-header">
 					<h3 class="box-title">ตารางรายชื่อกิจกรรม</h3>
