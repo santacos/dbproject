@@ -33,6 +33,7 @@ class CreateUsersTable extends Migration {
 		{
 			$table->integer('user_id')->unsigned()->primary('user_id');
 			$table->foreign('user_id')->references('id')->on('users');
+			$table->timestamps();
 		});
 
 		Schema::create('students',function(Blueprint $table)
@@ -41,6 +42,7 @@ class CreateUsersTable extends Migration {
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->string('description',200);
 			$table->integer('year')->unsigned();
+			$table->timestamps();
 		});
 
 		
