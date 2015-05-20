@@ -117,10 +117,11 @@ class ActivityController extends Controller {
 			foreach ($owners as $owner) {
 				if($user->id==$owner->id)$action=1;
 			}
+
+			//if not owner
 			if($action!=1){
 				$i=0;
 				foreach($recDBs as $recDB){
-					//$fkU = $user->application->where('rec_id',$recDB->rec_id);
 					if( $realuser->application->where('rec_id',$recDB->rec_id)->count()==0){
 						//$status[$i] = 3;
 						$status = array_add($status,$i,3);
@@ -131,8 +132,6 @@ class ActivityController extends Controller {
 					}
 					$i++;
 				}
-				//return count($recDBs);
-				//return $status;
 			}
 
 

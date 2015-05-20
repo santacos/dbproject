@@ -131,17 +131,42 @@ class RecruitmentController extends Controller {
 		$rec_id = $application->recruitment->rec_id;
 
 		//save to registration
-
+		if($status==1){
 		$registration = new \App\Registration;
 		$registration->user_id = $application->user_id;
 		$registration->rec_id = $application->rec_id;
 		$registration->save();
+		}
 
 		//update current num
 		$application->recruitment->current_num = DB::table('registration')->where('rec_id',$rec_id)->count();
 		$application->recruitment->save();
 
 		return redirect('recruitment/addmember?id='.$rec_id);
+	}
+
+	public function getAcceptmem(Request $request){
+		$app_id = Request::input('id');
+		$status = Request::input('st');
+
+		$application = \App\Application::with('recruitment')->where('app_id',$app_id)->first();
+		$application->status = $status;
+		$application->save();
+		$rec_id = $application->recruitment->rec_id;
+
+		//save to registration
+		if($status==1){
+		$registration = new \App\Registration;
+		$registration->user_id = $application->user_id;
+		$registration->rec_id = $application->rec_id;
+		$registration->save();
+		}
+
+		//update current num
+		$application->recruitment->current_num = DB::table('registration')->where('rec_id',$rec_id)->count();
+		$application->recruitment->save();
+
+		return redirect('user/allapp');
 	}
 
 	public function getRequest(Request $request){
@@ -184,7 +209,7 @@ class RecruitmentController extends Controller {
 			//return $ownApp;
 			$join = $user->registration;
 			$join = count($join);
-			$request = $user->application;
+			$request = $user->application->where('status',2);
 			$request = count($request);
 			//return $join;
 			return Response::json(array('ownApp'=>$ownApp,'join'=>$join,'request'=>$request));

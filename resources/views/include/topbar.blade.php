@@ -32,6 +32,7 @@
                 </a>
                 </li>
                 @endif
+                @if(Auth::check())
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
@@ -52,12 +53,14 @@
                     </div>
                   </li>
                 </ul>
+                 @endif
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
                 <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
               </li>
             </ul>
+
           </div>
         </nav>
       </header>

@@ -29,6 +29,7 @@
 								<th>Request ID</th>
 								<th>กิจกรรม</th>
 								<th>ฝ่าย</th>
+								<th style="width:35%;">รายละเอียด</th>
 								<th>ข้อความ</th>
 								<th>Action</th>
 							</tr>
@@ -39,14 +40,21 @@
 										<h4>คุณไม่มีคำร้องขอเข้ากิจกรรมใดๆ</h4>
 										<a href="{{url('activity')}}">คลิกเพื่อดูกิจกรรมที่สนใจ</a></p>
 								</div>
+								{{$requestapps}}
 							@else
 								@foreach($requestapps as $app)
 								<tr>
 									<td>{{$app->app_id}}</td>
 									<td>{{$app->recruitment->activity->name}}</td>
 									<td>{{$app->recruitment->department->name}}</td>
+									<td>{{$app->recruitment->edited_dep_detail}}</td>
 									<td>{{$app->message}}</td>
-									<td><a href="#" class="btn btn-default btn-sm"></a></td>
+									<td>
+										@if($app->status==2)รอการตอบรับ
+										@elseif($app->status==0)คำร้องขอถูกปฏิเสธ
+										@elseif($app->status==1)คำร้องขอได้รับการอนุมัติ
+										@endif
+									</td>
 
 
 
@@ -63,7 +71,7 @@
 	                <div class="box-header with-border">
 	                  <h3 class="box-title">คำเชิญจากกิจกรรม</h3>
 	                  <div class="box-tools pull-right">
-	                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	                    <button class="btn btn-box-tool"></button>
 	                  </div><!-- /.box-tools -->
 	                </div><!-- /.box-header -->
 	                <div class="box-body table-responsive no-padding">
@@ -73,6 +81,7 @@
 									<th>Request ID</th>
 									<th>กิจกรรม</th>
 									<th>ฝ่าย</th>
+									<th style="width:35%;">รายละเอียด</th>
 									<th>ข้อความ</th>
 									<th>Action</th>
 								</tr>
@@ -90,9 +99,13 @@
 										<td>{{$app->app_id}}</td>
 										<td>{{$app->recruitment->activity->name}}</td>
 										<td>{{$app->recruitment->department->name}}</td>
+				    					<td>{{$app->recruitment->edited_dep_detail}}</td>
 										<td>{{$app->message}}</td>
-										<td><a href="#" class="btn btn-default btn-sm"></a></td>
-
+										<td>
+											<a href="{{ url('/recruitment/acceptmem?id='.$app->app_id.'&&st=1') }}" class="btn btn-success">Accept</a>
+											<a href="{{ url('/recruitment/acceptmem?id='.$app->app_id.'&&st=0') }}" class="btn btn-danger">Reject</a>
+		    					
+				    					</td>
 									</tr>
 									@endforeach
 								@endif

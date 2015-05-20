@@ -22,7 +22,12 @@ class UserController extends Controller {
 		$applications = \App\Application::with('recruitment.activity','recruitment.department')->where('user_id',$user->id);
 
 		$aa = $applications->where('sender_flag',true)->where('status',2)->get();
-		$requestapps =$applications->where('sender_flag',false)->get();
+		
+		$requestapps =\App\Application::with('recruitment.activity','recruitment.department')->where('user_id',$user->id)->where('sender_flag',false)->get();
+
+		#$inviteapps =$applications->where('sender_flag',true)->get();
+
+
 		// return $requestapps;
 		// return $inviteapps;
 		// return $applications;
